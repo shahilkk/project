@@ -1,0 +1,101 @@
+.hover-zoomin a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .hover-zoomin img {
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .hover-zoomin:hover img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  .card-done{
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+ transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+padding: 14px 80px 18px 36px;
+cursor: pointer;
+}
+
+.card-done:hover{
+   transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.card-done img{
+    height: 150px;
+    width: 150px;
+}
+.text{
+    font-size: 60px;
+    font-weight: 500 ;
+    font-family: 'Source Serif 4', sans-serif;
+    color: white;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #3D7EAA 0%, #FFE47A  51%, #3D7EAA  100%)}
+.btn-grad {
+   /* margin: 10px;
+   padding: 15px 45px; */
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   /* box-shadow: 0 0 20px #eee; */
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center;
+ 
+   color: #fff;
+   text-decoration: none;
+ }
+ .btn-primary {
+  color: #fff;
+  background-color: #0495c9;
+  border-color: #139e80;
+  transition: 0.5s;
+  
+  
+ }
+
+ .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ad1414;
+  border-color: #0c94bdce; 
+}
+
+.btn-primary1 {
+  color: #fff;
+  background-color: #0495c9;
+  border-color: #139e80;
+  transition: 0.5s;
+  
+ }
+
+.btn-primary1:hover, .btn-primary1:focus, .btn-primary:active, .btn-primary1.active, .open>.dropdown-toggle.btn-primary1 {
+  color: #fff;
+  background-color: #10ad1e;
+  border-color: #0c94bdce; 
+}
+.save{
+  margin: 10px;
+  border-radius: 13px;
+
+}
+
+

@@ -1,0 +1,45 @@
+.back{
+    background-color: #bdc3c7;
+    height: 75px;
+   }
+   .foot{
+     background-color: #194f92;
+   }
+  .menu a{
+    
+    padding-left: 20px;
+    transition: .3s linear;
+    border-radius: 4px;
+
+  }
+  .menu a:hover,.menu li a:active, .navbar-light .navbar-nav  .nav-link:focus{
+    
+    transform: scale(1.1);
+    background: #525252;
+  }
+  
+  
+  
+  .link a{
+    color: black;
+    font-size: 17px;
+    padding: 1px;
+    transition: .3s linear;
+    border-radius: 4px;
+   
+
+  }
+  .link a:hover{
+   
+    transform: scale(1.1);
+    background:#eef2f3;
+  }
+  .navbar-light .navbar-nav .active> .nav-link,
+  .navbar-light .navbar-nav  .nav-link.active,
+  .navbar-light .navbar-nav  .nav-link.show,
+  .navbar-light .navbar-nav .show> .nav-link{
+    color: #fff;
+  }
+  .navbar-light .navbar-nav  .nav-link{
+    color: #ffff;
+  }
