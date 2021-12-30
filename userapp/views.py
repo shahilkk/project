@@ -11,4 +11,6 @@ def fnexplore(request):
 def fnchat(request):
     return render(request,'dicussion.html') 
 def fnprofile(request):
-    return render(request,'profile.html')                
+    return render(request,'profile.html') 
+def fnlogin(request):
+    return render(request,'login.html')                       

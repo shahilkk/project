@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logint</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container con">
+        <div class="row">
+            <div class="col-lg-12 mx-auto body " >
+                <div class="main">
+                    <input type="checkbox" name="" id="chk" aria-hidden="true">
+                    <div class="signup">
+                        <form>
+                            <label for="chk" aria-hidden="true">Sign Up</label>
+                            <input type="text" name="txt" placeholder="User name" required="">
+                            <input type="email" name="email" placeholder="Email address" required="">
+                            <input type="password" name="pswd" placeholder="password" required="">
+                            <button>sign Up</button>
+                        </form>
+                    </div>
+                    <div class="login">
+                        <label for="chk" aria-hidden="true">Login</label>
+                        <input type="email" name="email" placeholder="Email address" required="">
+                        <input type="password" name="pswd" placeholder="password" required="">
+                        <a href="#">forgot password</a>
+                       <button>Login</button>
+                       
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

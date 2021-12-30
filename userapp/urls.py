@@ -7,5 +7,6 @@ urlpatterns=[
     path('explore', views.fnexplore, name='explore'),
     path('chat', views.fnchat, name='chat'),
     path('profile', views.fnprofile, name='profile'),
+    path('login', views.fnlogin, name='login'),
 
 ]
