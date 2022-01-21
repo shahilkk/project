@@ -1,0 +1,101 @@
+{% extends 'mat.html' %}
+{% block content %}
+{% load static %}
+<style>
+  .padding {
+    padding: 40px;
+  }
+</style>
+<link rel="stylesheet" href="{% static 'css/dash.css' %}">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+  
+
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+      ['Income', 3],
+      ['Balance', 1],
+      ['Loss', 1],
+      ['Service', 1],
+      ['Profit', 2]
+    ]);
+
+    // Set chart options
+    var options = {
+      'title': 'Graphical Representation',
+      'width': 1000,
+      'height': 600
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
+
+
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <div> <span class="font-weight-bold project">WORK</span> <small class="text-black-50 totals">400 Total </small>
+    </div> <button class="btn btn-primary btn-sm">New Project</button>
+  </div>
+  <div class="bg-white border rounded mt-2">
+    <!-- <div class=" px-3 mt-3 d-flex flex-row justify-content-between"> <span>Work Details</span>
+          <div class="d-flex align-items-center"> <span class="border-right px-2 mr-2 text-black-50 fs-10">All Time</span> <i class="fa fa-caret-down"></i> </div>
+      </div> -->
+    <!-- <hr> -->
+    <div class="row px-5 mb-3 padding">
+      <div class="col-md-3 mt-1">
+        <div class="d-flex flex-row"><i class="fas fa-briefcase" style="font-size: xxx-large;"></i>
+          <div class="ml-2"> <span class="d-block font-weight-bold">241</span> <span>Total Work Get</span> </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-1">
+        <div class="d-flex flex-row"> <i class="fas fa-rupee-sign" style="font-size: xxx-large;"></i>
+          <div class="ml-2"> <span class="d-block font-weight-bold">3790</span> <span>Total Income</span> </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-1">
+        <div class="d-flex flex-row"> <i class="fas fa-chart-line" style="font-size: xxx-large;"></i>
+          <div class="ml-2"> <span class="d-block font-weight-bold">93%</span> <span>Performed</span> </div>
+        </div>
+      </div>
+      <div class="col-md-3 mt-1">
+        <div class="d-flex flex-row">
+          <div class="ml-5"> <span class="d-block text-black-50">283 Pending work</span> <span
+              class="text-black-50">3748 completed work</span> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row padding">
+    <div class="col-md-6">
+
+      <div id="chart_div"></div>
+
+
+    </div>
+   
+  </div>
+</div>
+
+{% endblock %}

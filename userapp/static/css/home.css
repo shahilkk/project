@@ -22,21 +22,23 @@
 
 }
 .landing-text h1::after{
-    content: "   helps to find job";
+    content: "    find job";
     color: rgb(244, 247, 246);
     animation: textanime 10s linear infinite;
 }
 @keyframes textanime{
-    25%{
-        content: "    help to build house";
+    50%{
+        content: " good    ";
     }
     50%{
-        content: "     create  opertunity";
+        content: "  effectivie    ";
     }
-    75%{
-        content: "    make life easy";
+    50%{
+        content: "    make ";
     }
-    
+    50%{
+        content: "easy";
+    }
 }
 .padding{
     padding: 80px 0;
@@ -214,4 +216,27 @@
     color: #272627;
     background: transparent;
 }
+.btn-grad {
+    background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%)
+  }
 
+  .btn-grad {
+    /* margin: 10px;
+     padding: 15px 45px; */
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.5s;
+    background-size: 200%;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center;
+
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }

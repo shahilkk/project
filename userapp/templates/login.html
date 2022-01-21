@@ -1,44 +1,98 @@
+{% extends 'master.html' %}
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>logint</title>
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container con">
-        <div class="row">
-            <div class="col-lg-12 mx-auto body " >
-                <div class="main">
-                    <input type="checkbox" name="" id="chk" aria-hidden="true">
-                    <div class="signup">
-                        <form>
-                            <label for="chk" aria-hidden="true">Sign Up</label>
-                            <input type="text" name="txt" placeholder="User name" required="">
-                            <input type="email" name="email" placeholder="Email address" required="">
-                            <input type="password" name="pswd" placeholder="password" required="">
-                            <button>sign Up</button>
-                        </form>
-                    </div>
-                    <div class="login">
-                        <label for="chk" aria-hidden="true">Login</label>
-                        <input type="email" name="email" placeholder="Email address" required="">
-                        <input type="password" name="pswd" placeholder="password" required="">
-                        <a href="#">forgot password</a>
-                       <button>Login</button>
-                       
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+    <style>
+         .error {
+    color: red;
+    
+  }
+    </style>
 
-                    </div>
+
+<div class="container-fluid ">
+    <div class="row  ">
+        <div class="col-md-6 pt-4">
+            <!-- <img src="{% static 'img/join1.jpg' %}" class="img-fluid ml-auto " style="height: 500px; width: 350px; background-size: cover;" alt="" > -->
+        </div>
+        <div class="col-md-6  pt-4 body ">
+            <form action="" id="login">
+            <div class="main mx-auto my-auto ">
+                
+                <input type="checkbox" name="" id="chk" aria-hidden="true">
+                
+                <div class="signup ">
+                    <label for="chk" aria-hidden="true">Sign Up</label>
+                    <input type="text" name="txt" placeholder="User name" >
+                    <input type="email" name="email" placeholder="Email address" >
+                    <input type="password" name="pswd" placeholder="password" >
+                    <button type="submit">sign Up</button>
+                </div>
+                <div class="login">
+                    <label for="chk" aria-hidden="true">Login</label>
+                    <input type="email" name="email" placeholder="Email address" required="">
+                    <input type="password" name="pswd" placeholder="password" required="">
+                    <a href="#">forgot password</a>
+                    <button >Login</button>
+
 
                 </div>
 
+
             </div>
+            
+        </form>
+
         </div>
     </div>
-    
-</body>
-</html>
+</div>
+
+<!-- <script>
+    $('#login').validate({
+        rules: {
+            txt: {
+                required: true,
+                minlength: 6,
+            },
+
+            email: {
+                required: true,
+                email: true,
+            },
+            pswd: {
+                required: true,
+                minlength: 7,
+            },
+
+        },
+        messages: {
+            txt: {
+                required: "Enter your User id",
+                minlength: "alteast 6",
+            },
+            
+            email: {
+                required: "Enter your Email Id",
+                email: "Enter Valid Email Address",
+            },
+            pswd: {
+                required: "Enter your password",
+                minlength: "minimum length 7",
+
+            },
+
+
+        },
+        SubmitHandler: function (login) {
+            form.submit();
+        }
+    })
+
+</script> -->
+
+{% endblock %}

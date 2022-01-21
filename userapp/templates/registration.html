@@ -1,0 +1,473 @@
+{% extends 'master.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<style>
+  .error {
+    color: red;
+  }
+</style>
+
+<section class="  gradient-custom-2">
+  <div class="container-fluid py-5 ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <form action="" id="form1">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+
+                    <div class="mb-4 pb-2">
+                      <select class="select  form-control form-control-lg" id="selectbox">
+                        <option value="" disabled selected>Service you Providing</option>
+                        <option value="Electronics & Appliances">Electronics & Appliances</option>
+                        <option value="Home Maintenance">Home Maintenance</option>
+                        <option value="Cleaning Service">Cleaning Service</option>
+                        <option value="Events & Occasions">Events & Occasions</option>
+                        <option value="Health & Personals">Health & Personals</option>
+                        <option value="Automobile Services">Automobile Services</option>
+                        <option value="Others">Others</option>
+                      </select>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="electronicbox" style="display: none;">
+                          <option value="computer repair"> Computer Repair</option>
+                          <option value=" mobile repair">Mobile Repair</option>
+                          <option value=" Tv repair">Tv Repair</option>
+                          <option value="Cctv repair">Cctv Repair</option>
+                          <option value="Printer repair">Printer Repair</option>
+                          <option value="Invertor repair">Invertor repair</option>
+                          <option value="Water Pump Repair">Water Pump Repair</option>
+                          <option value="Chimney Repair">Chimney Repair"</option>
+                          <option value="Electric Geyser Repair">Electric Geyser Repair</option>
+                          <option value="Dishwasher Repair">Dishwasher Repair</option>
+                          <option value="AC Repair">AC Repair</option>
+                          <option value="DTH Repair">DTH Repair</option>
+                          <option value="Refrigerator Repair">Refrigerator Repair</option>
+                          <option value="Washing Machine Repair">Washing Machine Repair</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="homebox" style="display: none;">
+                          <option value="carpentor">Carpentor</option>
+                          <option value="plumber">Plumber</option>
+                          <option value="electrician">Electrician</option>
+                          <option value="painting">Painting</option>
+                          <option value="interior designor">Interior Designor</option>
+                          <option value="architect">Architect</option>
+                          <option value="civil contractor">Civil Contractor</option>
+                          <option value="Rainwater Harvesting">Rainwater Harvesting</option>
+                          <option value="Gardeners">Gardeners</option>
+                          <option value="Wielding Work">Wielding Work</option>
+                          <option value="Solar Heater Service">Solar Heater Service</option>
+                          <option value="False Celling">False Celling</option>
+                          <option value="Masonry Works">Masonry Works</option>
+                          <option value="Water Proofing">Water Proofing</option>
+                          <option value="Aluminum Fabrication">Aluminum Fabrication</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="cleaningbox" style="display: none;">
+                          <option value="pest control">Pest Control</option>
+                          <option value="laundary">Laundary</option>
+                          <option value="home cleaing">Home Cleaing</option>
+                          <option value="water tank cleaing">Water Tank Cleaing</option>
+                          <option value="bathroom cleaing">Bathroom Cleaing</option>
+                          <option value="drainage cleaning">Drainage Cleaning</option>
+                          <option value="Chimney Cleaning">Chimney Cleaning</option>
+                          <option value="Glass Cleaning">Glass Cleaning</option>
+                          <option value="Aquarium Cleaning">Aquarium Cleaning </option>
+                          <option value="Kitchen Cleaning">Kitchen Cleaning</option>
+                          <option value="Termite Cleaning">Termite Cleaning</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="eventbox" style="display: none;">
+                          <option value="Wedding Planner">Wedding Planner</option>
+                          <option value="Cake Delivery">Cake Delivery</option>
+                          <option value="Birthday Planner">Birthday Planner</option>
+                          <option value="Mehendi Planner">Mehendi Planner</option>
+                          <option value="Baby Shower">Baby Shower</option>
+                          <option value="Flower Decor">Flower Decor</option>
+                          <option value="Sangeet Planner">Sangeet Planner</option>
+                          <option value="Wedding Photography">Wedding Photography</option>
+                          <option value="Pre-Wedding Photography">Pre-Wedding Photography</option>
+                          <option value="Event Photography">Event Photography</option>
+                          <option value="Baby Photography">Baby Photography</option>
+                          <option value="Portraits & Portfolio Shoot">Portraits & Portfolio Shoot</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="healthbox" style="display: none;">
+                          <option value="Physiotheraphy">Physiotheraphy</option>
+                          <option value="Yoga & Meditation">Yoga & Meditation</option>
+                          <option value="Beauty Service">Beauty Service</option>
+                          <option value="Tailoring">Tailoring</option>
+                          <option value="House Keeping">House Keeping</option>
+                          <option value="Barbber">Barbber</option>
+                          <option value="Fitness Trainer">Fitness Trainer</option>
+                          <option value="Tattoo Artists">Tattoo Artists</option>
+                          <option value="Security Guards">Security Guards</option>
+                          <option value="Astrology">Astrology</option>
+                          <option value="Bridal makeup">Bridal makeup</option>
+                          <option value="Dietitian">Dietitian</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <select class="select   form-control form-control-lg" id="autobox" style="display: none;">
+                          <option value="Car Wash">Car Wash</option>
+                          <option value="Car Repair">Car Repair</option>
+                          <option value="Bike Wash">Bike Wash</option>
+                          <option value="Bike Repair">Bike Repair</option>
+                          <option value="Driving school">Driving school</option>
+                          <option value="BreakDown Assistance">BreakDown Assistance</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <input type="text" id="inputbox" style="display: none;" placeholder="The Job you Provide"
+                          class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <label class="form-label " for="">First name</label>
+                          <input type="text" id="firstname" name="firstname"
+                            class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline">
+                          <label class="form-label" for="">Last name</label>
+                          <input type="text" id="lastname" name="lastname" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for="">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for="">Phone Number </label>
+                        <input type="text" id="mobile" name="phone" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Date of Birth</label>
+                          <input type="date" id="dob" name="dob" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Age</label>
+                          <input type="text" id="age" name="age" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline">
+                        <label class="form-label" for=""> Language Known</label>
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">ENGLISH</th>
+                                <th scope="col">MALAYALAM</th>
+                                <th scope="col">HINDI</th>
+                                <th scope="col">TAMIL</th>
+                                <th scope="col">TELUGU</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">Speake</th>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Read</th>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Write</th>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td><input type="checkbox" name="" id=""></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                  </div>
+                </div>
+                <div class="col-lg-6 bg-indigo text-white">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5">Contact Details</h3>
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
+                        <label class="form-label" for="">Address</label>
+                        <input type="text"  name="address" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+
+                    <div class="mb-4 pb-2">
+                      <div class="form-outline form-white">
+                        <label class="form-label" for="">Additional Information</label>
+                        <input type="text" id="" name="addition" class="form-control form-control-lg value" />
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">pin Code</label>
+                          <input type="text" id="pin" name="pin" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Place</label>
+                          <input type="text" id="place" name="place" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">                          
+                          <label class="form-label" for="">District</label>
+                          <input type="text" id="" name="district" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">State</label>
+                          <input type="text" id="" name="state" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Lattitude</label>
+                          <input type="text" id="" name="lat" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div class="form-outline form-white">
+                          <label class="form-label" for="">Longitude</label>
+                          <input type="text" id="" name="lon" class="form-control form-control-lg value" />
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                      <input class="form-check-input me-3" type="checkbox" value="" id=""  required/>
+                      <label class="form-check-label text-white" for="">
+                        I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of EC job..
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-light btn-lg" id="btnsubmit"
+                      data-mdb-ripple-color="dark">Register</button>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="{% static 'js/registration.js' %}"></script>
+<script>
+
+$('#form1').validate({
+    rules: {
+      firstname: {
+        required: true,
+        minlength: 6,
+      },
+      lastname: {
+        required: true,
+        minlength: 4,
+      },
+      email: {
+        required: true,
+        email: true,
+      },
+      phone: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10,
+      },
+      dob: {
+        required: true,
+        date: true,
+        dateFormat: true,
+      },
+      age: {
+        required: true,
+        number: true,
+        minlength: 2,
+      },
+      address: {
+        required: true,
+      },
+      addition: {
+        required: true,
+      },
+      pin: {
+        required: true,
+      },
+      place: {
+        required: true,
+      },
+      district: {
+        required: true,
+      },
+      state: {
+        required: true,
+      },
+      lat: {
+        required: true,
+      },
+      lon: {
+        required: true,
+      },
+    },
+    messages: {
+      firstname: {
+        required: "Enter your First name",
+        minlength: "alteast 6",
+      },
+      lastname: {
+        required: "Enter your last name",
+        minlength: "alteast 4",
+      },
+      email: {
+        required: "Enter your Email Addreaa",
+        email: "Enter Valid Email Address",
+      },
+      phone: {
+        required: "Enter your phone number",
+        number: "Enter Number",
+        minlength: "minimum length 10",
+        maxlength: "Not more than 10"
+
+      },
+      dob: {
+        required: "Enter Your Dob",
+        date: "Select date",
+        dateFormat: "Correct Format",
+      },
+      age: {
+        required: "Enter your age",
+        number: "Enter Number",
+        minlength: "You Should be above 10",
+      },
+      address: {
+        required: "Enter your Address",
+      },
+      addition: {
+        required: "Enter your additional Address",
+      },
+      pin: {
+        required: "Enter your pin",
+      },
+      place: {
+        required: "Enter your place",
+      },
+      district: {
+        required: "Enter your district",
+      },
+      state: {
+        required: "Enter your state",
+      },
+      lat: {
+        required: "Enter your latitude",
+      },
+      lon: {
+        required: "Enter your longitude",
+      },
+    },
+    SubmitHandler: function (form1) {
+      form.submit();
+    }
+  })
+
+
+</script>
+{% endblock %}

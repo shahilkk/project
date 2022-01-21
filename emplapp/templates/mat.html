@@ -11,41 +11,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>workers side</title>
     <link rel="stylesheet" href="{% static 'css/mat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <style>
+        body {
+    background-color: #eee
+    }
+
+    .var:hover {
+        background-color: #525252 !important
+    }
+
+    .var .fa {
+        transition: all 1s
+    }
+
+    .var:hover .fa {
+        transform: rotate(360deg)
+    }
+      .pro a{
+            color: black;
+            text-decoration: none;
+          }
+          
+          .ico a{
+            border-radius: 50%;
+          }
+          .foot {
+      background-color: #8e9eab;
+    }
+    </style>
     
   </head>
   <body>
+  <div class="container-fluid">
+
     <div class="row">
       <div class="col-lg-12">
-        <nav class="navbar navbar-expand-lg navbar-light  back">
+        <nav class="navbar navbar-expand-lg navbar-light   back">
           <a class="navbar-brand  fab fa-wolf-pack-battalion" style="font-size: 30px;"  href="#">    EC job</a>
-          <button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+          <!-- <button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> -->
         
           <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
                 <a class="nav-link fas fa-home" href="#">  Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle fas fa-wrench" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                Work Details
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Work Done</a>
-                  <a class="dropdown-item" href="#">Pending Work </a>
-                    <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">AVAILABILITY</a>
-                  <a class="dropdown-item" href="#">PAYMENT</a>
-                </div>
-              </li>
+              
               <li class="nav-item active">
-                <a class="nav-link fas fa-comments" href="#"> Discussion<span class="sr-only">(current)</span></a>
+                <a class="nav-link fas fa-comments" href="#!"> Discussion<span class="sr-only">(current)</span></a>
             </li>
               <li class="nav-item active">
-                <a class="nav-link fas fa-user" href="#"> Profile<span class="sr-only">(current)</span></a>
+                <a class="nav-link fas fa-user" href="profile"> Profile<span class="sr-only">(current)</span></a>
             </li> 
               
             </ul>
@@ -54,56 +77,195 @@
         </nav>
 
       </div>
+     </div>
+       <!-- <div class="container-fluid"> -->
+      <div class="row">
+          <div class="col-lg-12">
+             <div class="d-flex" id="wrapper">
+                 <!-- Sidebar-->
+                 <div class="border-end bg-white" id="sidebar-wrapper">
+                     <div class="sidebar-heading border-bottom bg-light">Worker_Id</div>
+                     <div class="list-group list-group-flush">
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dash">Dashboard</a>
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="order"> Worker Details </a>
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="detail">Quick Work</a>
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="review"> Review & Rating </a>
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Message</a>
+                         <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Admin Status</a>
+                     </div>
+                 </div>
+                 <!-- Page content wrapper-->
+                 <div id="page-content-wrapper">
+                     <!-- Top navigation-->
+                     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                         <div class="container-fluid">
+                             <button class="btn btn-primary" id="sidebarToggle">View Full</button>
+                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            
+                         </div>
+                     </nav>
+                     <!-- Page content-->
+                       <div class="row">
+                           <div class="col-lg-12">
+                           
+                             {% block content %}
+                              {% endblock %}
+                             
+                           </div>
+                       </div>
+                     <!-- </div> -->
+                 </div>
+             </div>
+              
+          </div>
+      <!-- </div> -->
     </div>
 
-    {% block content %}
-    {% endblock %}
-
+ 
+   
+  
+ 
+  
 
 
     <!-- Footer -->
-   <div class="row">
-    <div class="col-lg-12">
-       <footer class="page-footer font-small foot  pt-4">
-           <div class="container">
-           <!-- Social buttons -->
-             <ul class="list-unstyled list-inline text-center">
-               <li class="list-inline-item">
-                 <a href="#" class="btn-floating btn-fb mx-1">
-                   <i class="fab fa-facebook-f"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                <a href="#" class="btn-floating btn-gplus mx-1">
-                  <i class="fab fa-whatsapp"> </i>
-                </a>
-               <li class="list-inline-item">
-                 <a href="#" class="btn-floating btn-tw mx-1">
-                   <i class="fab fa-twitter"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a href="#" class="btn-floating btn-gplus mx-1">
-                   <i class="fab fa-google-plus-g"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                   <a href="#" class="btn-floating btn-gplus mx-1">
-                     <i class="fab fa-instagram"> </i>
-                   </a>
-                 </li>
-             
-              
-             </ul>
-             <!--  end Social buttons -->
-         
+    <footer class="page-footer font-small mdb-color pt-4 foot">
+
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left ">
+    
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3 ">
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
+            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+              consectetur
+              adipisicing elit.</p>
+          </div>
+          <!-- Grid column -->
+    
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 pro">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a href="#!">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+    
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 pro">
+            <h6 class="text-uppercase mb-4 font-weight-bold "> Useful links</h6>
+            <p>
+              <a href="#!">Your Account</a>
+            </p>
+            <p>
+              <a href="#!">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!">Help</a>
+            </p>
+          </div>
+    
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+    
         </div>
-            <div class="footer-copyright text-center link ">
-                <a  href="#">Home</a>
-                <a href="#">About work</a>
-               <a  href="#">Discussion</a>
-               <a href="#">Profile</a>
-             </div>
+        <!-- Footer links -->
+    
+        <hr>
+    
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+    
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8">
+    
+            <!--Copyright-->
+            <p class="text-center text-md-left">© 2020 Copyright:
+             
+            </p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+    
+            <!-- Social buttons -->
+             <section class="mb-4 ico">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light  btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!"  role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!"  role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Grid column -->
+    
+        </div>
+        <!-- Grid row -->
+    
+      </div>
+      <!-- Footer Links -->
+    
+    </footer>
+  
            <!-- end footer -->
 
     
@@ -114,8 +276,14 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- <script src="{% static 'js/home1.js' %}"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -123,5 +291,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
+    
+
+    
   </body>
 </html>
