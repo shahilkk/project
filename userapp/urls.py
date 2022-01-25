@@ -11,6 +11,9 @@ urlpatterns=[
     path('view', views.fnview, name='view'),
     path('registration', views.fnregistration, name='registration'),
     path('wrkpro', views.fnwrkpro, name='wrkpro'),
+    path('contact', views.fncontact, name='contact'),
+    path('payment', views.fnpayment, name='payment'),
+
 
 
 

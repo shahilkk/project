@@ -2,45 +2,51 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 <style>
-  .row1{
+  .row1 {
     padding: 30px;
   }
-  .card1{
+
+  .card1 {
     border-radius: 4px;
     background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     cursor: pointer;
     height: 500px;
 
   }
 
-   .card1:hover{
+  .card1:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
   }
-  .search{
+
+  .search {
     width: 250px;
-    
+
   }
-  .search_btn{
-/* background-color: transparent; */
-border-radius: 20px;
-color: white;
+
+  .search_btn {
+    /* background-color: transparent; */
+    border-radius: 20px;
+    color: white;
   }
-  .serbox{
+
+  .serbox {
     height: 130px;
     width: 120px;
     /* background-color: #cfcecc; */
     float: left;
     padding: 10px;
-   margin: 10px 0 0 50px;
-   transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-}
-.serbox:hover{
+    margin: 10px 0 0 50px;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+  }
+
+  .serbox:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
   }
 
   .hover-zoomin img {
@@ -52,6 +58,7 @@ color: white;
     -ms-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
+
   .hover-zoomin:hover img {
     -webkit-transform: scale(1.2);
     -moz-transform: scale(1.2);
@@ -60,18 +67,18 @@ color: white;
     transform: scale(1.2);
   }
 
-.serbox img{
-  height: 70px;
-  width: 70px;
-}
-.viewbtn{
-  height: 30px;
-  width: 100px;
-  background-color: transparent;
-  border-radius: 20px;
-  margin-top: 10px;
-}
+  .serbox img {
+    height: 70px;
+    width: 70px;
+  }
 
+  .viewbtn {
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
 </style>
 
 <!-- slider -->
@@ -79,79 +86,95 @@ color: white;
 <div class="container-fluid">
   <div class="row  ">
     <div class="col-lg-12">
-      <img src="{% static 'img/img1e1.jpg' %}" class="img-fluid" alt="...">
-      <div class="carousel-caption d-none d-md-block "  >
-       <!-- heading and animation -->
-        <h5 class="animated slideInDown" style="animation-delay: 1s;">Start Working with Us</h5>
-        <p class="lead animated fadeInUp" style="animation-delay: 2s;">"We are free and ready to start whenever you need me. Regarding the hours, We are flexible and willing to do work whenever you need ud the Team is ready."</p>
-        <div class="input-group mx-auto search " >
-          <input class="form-control py-2 border-right-0 border search_btn" type="search"  id="example-search-input" placeholder="Search..." >
-          <span class="input-group-append">
-              <button class="btn btn-outline-secondary border-left-0 border" type="button">
-                  <i class="fa fa-search"></i>
-              </button>
-            </span>
-      </div>
-      <!-- end heading and animation -->    
-    </div>
 
-    
-  
-       
+      <!--car  -->
+      <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/img1e1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-block d-md-block">
+              <h5 class="animated slideInDown" style="animation-delay: 1s;">Start Working with Us</h5>
+              <p class="lead animated fadeInUp" style="animation-delay: 2s;">"We are free and ready to start whenever
+                you need me. Regarding the hours, We are flexible and willing to do work whenever you need ud the Team
+                is ready."</p>
+              <div class="input-group mx-auto search ">
+                <input class="form-control py-2 border-right-0 border search_btn" type="search"
+                  id="example-search-input" placeholder="Search...">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- end car -->
+
     </div>
   </div>
 
 
- <!-- end slider -->
+  <!-- end slider -->
 
 
 
- <!-- about -->
+  <!-- about -->
 
-   <div class="padding">
+  <div class="padding">
     <section id="about" class="section-padding about-section">
       <div class="container" style="background-color: #F0F2F0 ;">
-         <div class="row row1">
-      <div class="col-md-6">
-      <div class="section-title">
-        <div class="section-subtitle"> About us </div>
-        <h2 class="section-main-title">WE ARE <strong>CREATIVE</strong></h2>
-      </div>
-      <div class="about-item">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sed cum repellat omnis tempore atque corporis quibusdam porro doloribus accusantium tenetur ipsam, qui quis odio suscipit nam id, Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt numquam eveniet, molestias explicabo at beatae illo neque nulla vel minima ipsam inventore hic sit soluta architecto quam amet accusantium culpa! cumque vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam totam laudantium quas exercitationem asperiores, modi dicta earum? Incidunt aut exercitationem eos? Rerum modi reprehenderit tempora fuga accusamus odio sint sapiente.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum labore, esse saepe voluptates fuga dolor eveniet explicabo soluta nihil tenetur sapiente et reiciendis quo totam? Quam corrupti explicabo deserunt. 
-        </p>
-        <div class="hgt-20">
-          <div class="home-button">
-            <a href="" style="text-decoration: none;"><input type="button" value="Read More" class="btn-grad"></a>
+        <div class="row row1">
+          <div class="col-md-6">
+            <div class="section-title">
+              <div class="section-subtitle"> About us </div>
+              <h2 class="section-main-title">WE ARE <strong>CREATIVE</strong></h2>
+            </div>
+            <div class="about-item">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sed cum repellat omnis tempore atque
+                corporis quibusdam porro doloribus accusantium tenetur ipsam, qui quis odio suscipit nam id, Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Deserunt numquam eveniet, molestias explicabo at beatae
+                illo neque nulla vel minima ipsam inventore hic sit soluta architecto quam amet accusantium culpa!
+                cumque vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam totam laudantium quas
+                exercitationem asperiores, modi dicta earum? Incidunt aut exercitationem eos? Rerum modi reprehenderit
+                tempora fuga accusamus odio sint sapiente.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum labore, esse saepe voluptates fuga
+                dolor eveniet explicabo soluta nihil tenetur sapiente et reiciendis quo totam? Quam corrupti explicabo
+                deserunt.
+              </p>
+              <div class="hgt-20">
+                <!-- <div class="home-button">
+                  <a href="" style="text-decoration: none;"><input type="button" value="Read More" class="btn-grad"></a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-box">
+              <div class="box-overlay"></div>
+              <a href="#!" class="vediopopup">
+                <img src="{% static 'img/img2.jpg' %}" alt="">
+                <span class="sonar-wrapper">
+                  <span class="sonar-emitter">
+                    <i class="fa fa-play"></i>
+                    <div class="sonar-wave"></div>
+
+                  </span>
+
+                </span>
+              </a>
+
+            </div>
           </div>
         </div>
       </div>
-     </div>
-      <div class="col-md-6">
-        <div class="about-box">
-          <div class="box-overlay"></div>
-          <a href="#!" class="vediopopup">
-            <img src="{% static 'img/img2.jpg' %}"  alt="">
-            <span class="sonar-wrapper">
-              <span class="sonar-emitter">
-                <i class="fa fa-play"></i>
-                <div class="sonar-wave"></div>
 
-              </span>
-
-            </span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-    </div>
-
-   </section>
+    </section>
 
   </div>
 
@@ -163,120 +186,314 @@ color: white;
 
 
   <!-- endabout -->
-   
- 
 
 
 
 
-  
+
+
+
 
 
 
 
   <!-- bg img -->
-  
- <div class="row row1 ">
+
+  <div class="row row1 ">
     <div class="col-lg-12">
-        <div id="home">
-            <div class="landing-text">
-                <h1>EC job</h1>
-                <h3>welcome</h3>
-                <a href="registration" class="btn btn-color-background ">Become a Partner</a>
-            </div>
+      <div id="home">
+        <div class="landing-text">
+          <h1>EC job</h1>
+          <h3>welcome</h3>
+          <a href="registration" class="btn btn-color-background ">Become a Partner</a>
         </div>
+      </div>
     </div>
- </div>
-
-   <!-- end bgimg -->
-
-   <!-- service -->
-
-<div class="row row1">
-  <div class=" col-lg-12"> 
-    <h2 class="ml-5"><u>Service Proving</u></h2>
   </div>
- <div class="col-lg-12 "> 
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/car.png' %}" alt=""><h6 >carpenter</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/clea.png' %}" alt=""><h6>cleaning</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/comp.png' %}" alt=""><h6>computer repair</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/elec.png' %}" alt=""><h6>Ectrician</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/pest.png' %}" alt=""><h6>Pest control</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/plum.png' %}" alt=""><h6>plumber</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/rep.png' %}"  alt=""><h6>bike repair</h6></div></a>
-  <a href="view"> <div class="serbox  hover-zoomin"><img src="{% static 'img/service/wash.png' %}" alt=""><h6>laundary</h6></div></a>
- </div>
-    <a href="service" class="mx-auto" style="text-decoration: none;"><input type="button" value="View More" class="btn-grad"></a>
-</div>
+
+  <!-- end bgimg -->
+
+  <!-- service -->
+
+  <div class="row row1">
+    <div class=" col-lg-12">
+      <h2 class="ml-5"><u>Service Proving</u></h2>
+    </div>
+    <div class="col-lg-12 ">
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/car.png' %}" alt="">
+          <h6>carpenter</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/clea.png' %}" alt="">
+          <h6>cleaning</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/comp.png' %}" alt="">
+          <h6>computer repair</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/elec.png' %}" alt="">
+          <h6>Ectrician</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/pest.png' %}" alt="">
+          <h6>Pest control</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/plum.png' %}" alt="">
+          <h6>plumber</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/rep.png' %}" alt="">
+          <h6>bike repair</h6>
+        </div>
+      </a>
+      <a href="view">
+        <div class="serbox  hover-zoomin"><img src="{% static 'img/service/wash.png' %}" alt="">
+          <h6>laundary</h6>
+        </div>
+      </a>
+    </div>
+
+    <a href="service" class="mx-auto" style="text-decoration: none;"><input type="button" value="View More"
+        class="btn-grad"></a>
+  </div>
 
 
-   <!--  end service -->
+
+  <!-- end service -->
 
 
-   <!-- pricing -->
- <div class="row row1">
+  <!-- pricing -->
+  <div class="row row1">
     <div class="col-lg-12 text-center">
-        <div class="jumbotron" id="special">
-            <h1 class="display-4">Special Offers</h1>
-            <p class="lead">A special offer is a product, service, or programme that is offered at reduced prices or rates. </p>
-            <hr class="my-4">
-            <div class="row ">
-            <div class="col-md-4">
-            <div class=" card card1 border-light mb-3 mx-auto  " style="max-width: 18rem; max-height:300px">
-              
-                <div class="card-header">Mega Plan</div>
-                    <div class="card-body">
-                  <h5 class="card-title">Price Depends/-</h5>
-                  <p class="card-text">Building Construction Process from Start to Finish</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                 
+      <div class="jumbotron" id="special">
+        <h1 class="display-4">Special Offers</h1>
+        <p class="lead">A special offer is a product, service, or programme that is offered at reduced prices or rates.
+        </p>
+        <hr class="my-4">
+
+        <div class="pricing card-deck flex-column flex-md-row mb-3">
+          <div class="row">
+            <div class="col-md-3">
+              <div style="max-width: 18rem; max-height:400px" class="card card-pricing text-center px-3 mb-4 card1">
+                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">STANDARD PACKAGE</span>
+                <div class="bg-transparent card-header pt-4 border-0">
+                  <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">₹<span
+                      class="price">1700</span><span class="h6 text-muted ml-2">/ Sqft</span></h1>
+                </div>
+                <div class="card-body pt-0">
+                  <ul class="list-unstyled mb-4">
+                    <li>Structure – branded and high quality </li>
+                    <li>Bare shell – W/O Interiors</li>
+                    <li> Free Consultation</li>
+                    <li>Basic support</li>
+                  </ul> <button type="button" class="btn btn-outline-secondary mb-3 hvr " data-toggle="modal"
+                    data-target="#stdmodal">View More</button>
                 </div>
               </div>
             </div>
-            <div class="col-md-4"  id="earn">
-              <div class=" card card1 border-light mb-3 mx-auto " style="max-width: 18rem; max-height:300px">
-                  <div class="card-header">Earn & Study</div>
-                      <div class="card-body">
-                    <h5 class="card-title">5000/-</h5>
-                    <p class="card-text">Can work with us <br>can a Study a perticular</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                   
-                  </div>
+            <div class="col-md-3">
+              <div style="max-width: 18rem; max-height:400px" class="card card-pricing text-center px-3 mb-4 card1">
+                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">PREMIUM PACKAGE</span>
+                <div class="bg-transparent card-header pt-4 border-0">
+                  <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">₹<span
+                      class="price">2300</span><span class="h6 text-muted ml-2">/ Sqft</span></h1>
+                </div>
+                <div class="card-body pt-0">
+                  <ul class="list-unstyled mb-4">
+                    <li>Structure – branded and high quality </li>
+                    <li>  With Interior</li>
+                    <li> Free Consultation</li>
+                    <li>Basic support</li>
+                  </ul> <button type="button" class="btn btn-outline-secondary mb-3 hvr " data-toggle="modal"
+                    data-target="#!">View More</button>
                 </div>
               </div>
-              <div class="col-md-4"  id="pre" >
-                <div class=" card card1 border-light mb-3 mx-auto "style="max-width: 18rem; max-height:300px">
-                    <div class="card-header">Premium member</div>
-                        <div class="card-body">
-                      <h5 class="card-title">10000/-</h5>
-                      <p class="card-text">Instalment payment <br>Help center access <br>Special considration</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                     
-                    </div>
-                  </div>
+            </div>
+            <div class="col-md-3">
+              <div style="max-width: 18rem; max-height:400px" class="card card-pricing text-center px-3 mb-4 card1">
+                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">SUPER PREMIUM</span>
+                <div class="bg-transparent card-header pt-4 border-0">
+                  <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">₹<span
+                      class="price">2500</span><span class="h6 text-muted ml-2">/ Sqft</span></h1>
                 </div>
+                <div class="card-body pt-0">
+                  <ul class="list-unstyled mb-4">
+                    <li>Structure – branded and high quality </li>
+                    <li>  With Interior</li>
+                    <li> Free Consultation</li>
+                    <li>Basic support</li>
+                  </ul> <button type="button" class="btn btn-outline-secondary mb-3 hvr " data-toggle="modal"
+                    data-target="#!">View More</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div style="max-width: 18rem; max-height:400px" class="card card-pricing text-center px-3 mb-4 card1">
+                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">LUXURY</span>
+                <div class="bg-transparent card-header pt-4 border-0">
+                  <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">₹<span
+                      class="price">3000</span><span class="h6 text-muted ml-2">/ Sqft</span></h1>
+                </div>
+                <div class="card-body pt-0">
+                  <ul class="list-unstyled mb-4">
+                    <li>Structure – branded and high quality </li>
+                    <li>  With Interior</li>
+                    <li> Free Consultation</li>
+                    <li>Basic support</li>
+                  </ul> <button type="button" class="btn btn-outline-secondary mb-3 hvr " data-toggle="modal"
+                    data-target="#!">View More</button>
+                </div>
+              </div>
+            </div>
           </div>
-              
-              
-           
-          </div>
+        </div>
+      </div>
     </div>
- </div>
+  </div>
+
+  <!-- endpricing -->
+
+
 </div>
 
- <!-- endpricing -->
 
-  
+<!-- modal std -->
+<div class="modal fade" id="stdmodal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Standard Package</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Items</th>
+              <th scope="col">Features</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Car Porch Area</td>
+              <td>Flooring: Paver tiles up to Rs 30/sqft <br> Electrical and plumbing points in this area</td>
+
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Entrance Area</td>
+              <td>Polished granite flooring (steel grey or black) up to Rs 70/sqft <br> Teak Wood door with teak wood
+                <br> (Main door)Main door towel bolts, handles and lock to have bronze.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Living room/Family room </td>
+              <td>Vitrified floor up to Rs 110/ sqft</td>
+            </tr>
+            <tr>
+              <th scope="row">4 </th>
+              <td>Verandah </td>
+              <td>Granite flooring up to Rs 120/sqft <br> Accent wall -texture paint or wallpaper (Size: 8’x10’) <br>
+                Shoe rack - 18mm commercial ply + 1mm laminate finish (internal white laminate and external with
+                laminate and louvers on each shutter)up to Rs 50/sqft with Hettich hardware/fittings.(Size : 4’ x 2’)
+                <br> Teak Wood door with teak wood frames with carving
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"> 5</th>
+              <td> Dining </td>
+              <td>Vitrified flooring up to Rs 110/sqft</td>
+            </tr>
+            <tr>
+              <th scope="row">6 </th>
+              <td>Kitchen </td>
+              <td>Modular kitchen with 18mm water proof ply + 18mm ply shutters with laminate at Rs 50/sqft with
+                Hettich/Godrej hardware. <br>Accessories: 1 cutlery, 2 Tandem boxes, 1 bottle pullout and 2 plain
+                baskets (Size: up to 60sqft) <br>20mm thick Black color granite top up to Rs 135/sqft <br>SS double
+                dipper sink <br>Copper gas piping<br> 2" x 2" vitrified marbonite finished tiles up to Rs 150/sqft<br>
+                Breakfast counter - black granite<br> Ceramic wall tiles above kitchen slab up to Rs 50/sqft </td>
+            </tr>
+            <tr>
+              <th scope="row">7 </th>
+              <td>Utility </td>
+              <td> 10mm thick Black granite top<br> Double dipper SS sink<br> 2" x 2" vitrified tiles up to Rs 110/sqft
+                and ceramic tiles wall cladding where ever required up to Rs 40/ sqft (Only 4’ height wall)</td>
+            </tr>
+            <tr>
+              <th scope="row"> 8</th>
+              <td>Bedroom & washroom </td>
+              <td> Vitrified tiles up to Rs 110/sqft <br> Toilet - ceramic tiles for floor and wall up to 7ft height up
+                to Rs 40/sqft <br> Ventilator window as per the design<br> Rs 20,000/- allowances for bathroom fixtures
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">9 </th>
+              <td>Stair case </td>
+              <td> Semi polished granite flooring up to Rs 120/sqft <br>MS Railing </td>
+            </tr>
+            <tr>
+              <th scope="row">10 </th>
+              <td>Balcony </td>
+              <td> Anti skid ceramic tiles for the flooring up to Rs 40/sqft<br> Railing</td>
+            </tr>
+            <tr>
+              <th scope="row">11 </th>
+              <td>Terrace </td>
+              <td>Paver tiles for the flooring up to Rs 40/sqft<br> 1 Overhead tank – Sintex tank of 1000ltrs </td>
+            </tr>
+            <tr>
+              <th scope="row"> 12</th>
+              <td>Painting </td>
+              <td>Plastic emulsion painting (Internal) – Asian<br> Exterior emulsion painting – Asian </td>
+            </tr>
+            <tr>
+              <th scope="row">13 </th>
+              <td>Electrical </td>
+              <td>All conduits and wiring <br> Wires - Finolex. Switches – Anchor/Legrand <br> Switches and switchboard
+                <br> Connections, points provided for UPS/AC points wherever required.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">14 </th>
+              <td>Sump Work </td>
+              <td>Sump with capacity up to 10,000 liters <br> Sump to be constructed with brick masonry </td>
+            </tr>
 
 
 
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Vist Later</button>
+      <a href="payment"><button type="button" class="btn btn-primary"  >Book Now</button></a>  
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 
 
 {% endblock %}
-
-
-
-

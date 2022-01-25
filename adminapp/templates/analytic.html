@@ -8,11 +8,11 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
-        ["Copper", 8.94, "#b87333"],
-        ["Silver", 10.49, "silver"],
-        ["Gold", 19.30, "gold"],
-        ["Platinum", 21.45, "color: #e5e4e2"]
+        ["Price", "Income", { role: "style" } ],
+        ["luxury", 8.94, "#b87333"],
+        ["Super Premium", 10.49, "silver"],
+        ["Premium Package", 19.30, "gold"],
+        ["Standard Package", 21.45, "color: #e5e4e2"]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -24,8 +24,8 @@
                        2]);
 
       var options = {
-        title: "Density of Precious Metals, in g/cm^3",
-        width: 900,
+        title: "Price variation depends on Package /sqft",
+        width: 1250, 
         height: 400,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
@@ -38,10 +38,70 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 col-md-6 col-12">
             <div id="columnchart_values"  style="width: 900px; height: 300px;"></div>
         </div>
         
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card shadow border-0 mb-7 my-auto">
+            <div class="card-header text-right mr-auto">
+                <h5 class="mb-0 text-center"> Revenue Details</h5>
+            </div>
+            <div class="table-responsive ">
+                <table id="example" class="table table-hover table-striped table-bordered nowrap"
+                    style="width:100%">
+                    <thead class="thead-light head">
+                        <tr>
+                            <th style="font-weight: 900; background-color: bisque;">First name</th>
+                            <th style="font-weight: 900; background-color: bisque;">Package</th>
+                            <th style="font-weight: 900; background-color: bisque;">Total sqft</th>
+                            <th style="font-weight: 900; background-color: bisque;">Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>shahil</td>
+                           <td>luxury</td>
+                           <td>300</td>
+                           <td>₹950000</td>
+
+                        </tr>
+                        <tr>
+                          <td>sreehari</td>
+                          <td>Standard Package</td>
+                          <td>2000</td>
+                          <td>₹3000000</td>
+
+                        </tr>
+                        <tr>
+                          <td>shadil</td>
+                          <td>Super Premium</td>
+                          <td>500</td>
+                          <td>₹123098</td>
+
+                        </tr>
+                        <tr>
+                          <td>harshin</td>
+                          <td>Premium Package</td>
+                          <td>1000</td>
+                          <td>₹209098</td>
+                        </tr>
+                        <tr>
+                          <td>aswandh</td>
+                          <td>Standard Package</td>
+                          <td>1500</td>
+                          <td>₹287000</td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 

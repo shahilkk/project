@@ -4,101 +4,128 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
+    .button {
+        width: 200px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        margin: 20px;
+        height: 55px;
+        text-align: center;
+        border: none;
+        background-size: 300% 100%;
+        border-radius: 50px;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .5s ease-in-out;
+        vertical-align: middle;
+        text-transform: uppercase;
 
-.button{
-    width: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .5s ease-in-out;
-    vertical-align: middle;
-    text-transform: uppercase;
+    }
 
-}
+    .button:hover {
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
 
-.button:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-}
+    .button:focus {
+        outline: none;
+    }
 
-.button:focus {
-    outline: none;
-}
-.button {
-    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-}
+    .button {
+        background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+        box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+    }
 </style>
 
-    
 
 
+<div class="container-fluid bg-light  mt-5 ">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/service/p7.webp' %}" class="d-block img-fluid " alt="...">
+                        <div class="carousel-caption d-block d-md-block bread ">
 
-<div class="container bg-light mt-5">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- image and bread -->
+
+    <!--  end image and bread -->
+
     <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-12 pt-2">
             <div class="border-bottom pb-2 ml-2">
-                    <h1>service</h1>
+                <h1>Service</h1>
             </div>
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3  active" id="allcategories" href="#!">All Categories</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="elect" href="#!">Electronics & Appliances</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="homemaintance" href="#!">Home Maintenance</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="cleaningservice" href="#!">Cleaning Service</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="eventoccasion" href="#!">Events & Occasions</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="automobile" href="#!">Automobile Services</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="healthpersonal" href="#!">Health & Personals</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="otherservice" href="#!">Others</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3  active"
+                        id="allcategories" href="#!">All Categories</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="elect"
+                        href="#!">Electronics & Appliances</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="homemaintance"
+                        href="#!">Home Maintenance</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="cleaningservice"
+                        href="#!">Cleaning Service</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="eventoccasion"
+                        href="#!">Events & Occasions</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="automobile"
+                        href="#!">Automobile Services</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="healthpersonal"
+                        href="#!">Health & Personals</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" id="otherservice"
+                        href="#!">Others</a>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="allcat">
-            <div class="section" >
-             <a href="view"><input type="button" value="computer service" class="button" ></a>
-             <a href="view"><input type="button" value="mobile service" class="button" ></a>
-             <a href="view"><input type="button" value="washing service" class="button"></a>
-             <a href="view"><input type="button" value="cleaning service" class="button"></a>
-             <a href="view"><input type="button" value="health  service" class="button"></a>
-             <a href="view"><input type="button" value="event planning" class="button" ></a>
-             <a href="view"><input type="button" value="photography" class="button" ></a>
-             <a href="view"><input type="button" value="painting" class="button"  ></a>
-             <a href="view"><input type="button" value="carpenter" class="button"></a>
+            <div class="section">
+                <a href="view"><input type="button" value="computer service" class="button"></a>
+                <a href="view"><input type="button" value="mobile service" class="button"></a>
+                <a href="view"><input type="button" value="washing service" class="button"></a>
+                <a href="view"><input type="button" value="cleaning service" class="button"></a>
+                <a href="view"><input type="button" value="health  service" class="button"></a>
+                <a href="view"><input type="button" value="event planning" class="button"></a>
+                <a href="view"><input type="button" value="photography" class="button"></a>
+                <a href="view"><input type="button" value="painting" class="button"></a>
+                <a href="view"><input type="button" value="carpenter" class="button"></a>
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewele" style="display: none;">
-            <h1 >Electronics & Appliances</h1>
+            <h1>Electronics & Appliances</h1>
             <div class="section">
-               <a href="view"><input type="button" value="Computer Repair"  class="button" ></a> 
-                <a href="view"><input type="button" value="Mobile Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Tv Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Cctv Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Printer Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Invertor Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Water Pump Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Chimney Repair" class="button" ></a>
-                <a href="view"><input type="button" value="Electric Geyser Repair" class="button" ></a>
-                <a href="view"><input type="button" value=" Dishwasher Repair" class="button" ></a>
+                <a href="view"><input type="button" value="Computer Repair" class="button"></a>
+                <a href="view"><input type="button" value="Mobile Repair" class="button"></a>
+                <a href="view"><input type="button" value="Tv Repair" class="button"></a>
+                <a href="view"><input type="button" value="Cctv Repair" class="button"></a>
+                <a href="view"><input type="button" value="Printer Repair" class="button"></a>
+                <a href="view"><input type="button" value="Invertor Repair" class="button"></a>
+                <a href="view"><input type="button" value="Water Pump Repair" class="button"></a>
+                <a href="view"><input type="button" value="Chimney Repair" class="button"></a>
+                <a href="view"><input type="button" value="Electric Geyser Repair" class="button"></a>
+                <a href="view"><input type="button" value=" Dishwasher Repair" class="button"></a>
                 <a href="view"><input type="button" value="AC Repair" class="button"></a>
                 <a href="view"><input type="button" value="DTH Repair" class="button"></a>
                 <a href="view"><input type="button" value="Refrigerator Repair" class="button"></a>
@@ -106,15 +133,15 @@
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewhome" style="display: none;">
-            <h1 >Home Maintenance</h1>
+            <h1>Home Maintenance</h1>
             <div class="section">
-                <a href="view"><input type="button" value="Carpentor" class="button" ></a>
-                <a href="view"><input type="button" value="Plumber" class="button" ></a>
-                <a href="view"><input type="button" value="Electrician" class="button" ></a>
-                <a href="view"><input type="button" value="Painting" class="button" ></a>
-                <a href="view"><input type="button" value="Interior Designor" class="button" ></a>
-                <a href="view"><input type="button" value="Architect" class="button" ></a>
-                <a href="view"><input type="button" value="Civil contractor" class="button" ></a>
+                <a href="view"><input type="button" value="Carpentor" class="button"></a>
+                <a href="view"><input type="button" value="Plumber" class="button"></a>
+                <a href="view"><input type="button" value="Electrician" class="button"></a>
+                <a href="view"><input type="button" value="Painting" class="button"></a>
+                <a href="view"><input type="button" value="Interior Designor" class="button"></a>
+                <a href="view"><input type="button" value="Architect" class="button"></a>
+                <a href="view"><input type="button" value="Civil contractor" class="button"></a>
                 <a href="view"><input type="button" value="Rainwater Harvesting" class="button"></a>
                 <a href="view"><input type="button" value="Gardeners" class="button"></a>
                 <a href="view"><input type="button" value="Wielding Work" class="button"></a>
@@ -122,28 +149,28 @@
                 <a href="view"><input type="button" value="False Celling" class="button"></a>
                 <a href="view"><input type="button" value="Masonry Works" class="button"></a>
                 <a href="view"><input type="button" value="Water Proofing" class="button"></a>
-                <a href="view"><input type="button" value="Aluminum Fabrication" class="button"></a>                
+                <a href="view"><input type="button" value="Aluminum Fabrication" class="button"></a>
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewclean" style="display: none;">
-            <h1 >Cleaning Service</h1>
+            <h1>Cleaning Service</h1>
             <div class="section">
-                <a href="view"><input type="button" value="Pest Control" class="button" ></a>
-                <a href="view"><input type="button" value="Laundary" class="button" ></a>
-                <a href="view"><input type="button" value="Home Cleaing" class="button" ></a>
-                <a href="view"><input type="button" value="Water Tank Cleaing" class="button" ></a>
-                <a href="view"><input type="button" value="Bathroom Cleaing" class="button" ></a>
-                <a href="view"><input type="button" value="Drainage Cleaning" class="button" ></a>
+                <a href="view"><input type="button" value="Pest Control" class="button"></a>
+                <a href="view"><input type="button" value="Laundary" class="button"></a>
+                <a href="view"><input type="button" value="Home Cleaing" class="button"></a>
+                <a href="view"><input type="button" value="Water Tank Cleaing" class="button"></a>
+                <a href="view"><input type="button" value="Bathroom Cleaing" class="button"></a>
+                <a href="view"><input type="button" value="Drainage Cleaning" class="button"></a>
                 <a href="view"><input type="button" value="Chimney Cleaning" class="button"></a>
                 <a href="view"><input type="button" value="Glass Cleaning" class="button"></a>
                 <a href="view"><input type="button" value="Aquarium Cleaning" class="button"></a>
                 <a href="view"><input type="button" value="Kitchen Cleaning" class="button"></a>
                 <a href="view"><input type="button" value="Termite Cleaning" class="button"></a>
-                
+
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewevent" style="display: none;">
-            <h1 >Events & Occasions</h1>
+            <h1>Events & Occasions</h1>
             <div class="section">
                 <a href="view"><input type="button" value="Wedding Planner" class="button"></a>
                 <a href="view"><input type="button" value="Cake Delivery " class="button"></a>
@@ -160,7 +187,7 @@
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewauto" style="display: none;">
-            <h1 >Automobile Services</h1>
+            <h1>Automobile Services</h1>
             <div class="section">
                 <a href="view"><input type="button" value="Car Wash" class="button"></a>
                 <a href="view"><input type="button" value="Car Repair" class="button"></a>
@@ -168,11 +195,11 @@
                 <a href="view"><input type="button" value="Bike Repair" class="button"></a>
                 <a href="view"><input type="button" value="Driving school" class="button"></a>
                 <a href="view"><input type="button" value="BreakDown Assistance" class="button"></a>
-             
+
             </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12" id="viewhealth" style="display: none;">
-            <h1 >Health & Personals</h1>
+            <h1>Health & Personals</h1>
             <div class="section">
                 <a href="view"><input type="button" value="Physiotheraphy " class="button"></a>
                 <a href="view"><input type="button" value="Yoga & Meditation" class="button"></a>
@@ -189,11 +216,12 @@
             </div>
         </div>
 
-        
+
     </div>
+
 </div>
 
 
-  <script src="{% static 'js/service.js' %}"></script>
+<script src="{% static 'js/service.js' %}"></script>
 
 {% endblock %}

@@ -54,6 +54,115 @@
     .ico a {
       border-radius: 50%;
     }
+
+    /* modal */
+    .signup_v4 .social-area {
+      text-align: center;
+      padding-top: 14px
+    }
+
+    .signup_v4 .social-area .title {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-block;
+      color: #bdc3c7;
+      position: relative
+    }
+
+    .signup_v4 .social-area .text {
+      font-size: 17px;
+      font-weight: 400;
+      color: #143250
+    }
+
+    .signup_v4 .social-area .title::before {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(0, 0, 0, .2);
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 100%;
+      margin-left: 7px
+    }
+
+    .signup_v4 .social-area .title::after {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(0, 0, 0, .2);
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 100%;
+      margin-right: 7px
+    }
+
+    .signup_v4 ul.social-links {
+      padding: 0;
+      margin: 0
+    }
+
+    .signup_v4 .social-area .social-links li {
+      display: inline-block
+    }
+
+    .signup_v4 .social-area .social-links li a i {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      line-height: 50px;
+      display: inline-block;
+      color: #fff;
+      margin: 0 5px;
+      -webkit-box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+      box-shadow: 0 5px 10px rgb(0 0 0 / 15%)
+    }
+
+    .signup_v4 .social-area .social-links li a i.fa-facebook-f {
+      background: #0069f7
+    }
+
+    .signup_v4 .social-area .social-links li a i.fa-google-plus-g {
+      background: #d1062c
+    }
+
+    .signup_v4 .nav-tabs .nav-link.active {
+      background: #bdc3c7
+    }
+
+    .signup_v4 .nav-tabs .nav-link {
+      background: #143250
+    }
+
+    .signup_v4 .nav-tabs .nav-link {
+      border: 0;
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 0;
+      color: #fff
+    }
+
+    .signup_v4 .nav-tabs li.nav-item {
+      width: 50%
+    }
+
+    .signup_v4 .card-body {
+      padding: 0px
+    }
+
+    .signup_v4 .card-body .tab-content {
+      padding: 0 1.25rem 1.75em
+    }
+
+    /* end modal */
   </style>
 
 </head>
@@ -63,7 +172,7 @@
     <div class="row">
       <div class="col-lg-12 ">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light   back " role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light   back" id="nav" role="navigation">
           <div class="container-fluid">
 
 
@@ -71,38 +180,27 @@
             <a class="navbar-brand  fab fa-wolf-pack-battalion" style="font-size: 40px;font-weight: 400;" href="#"> EC
               job</a>
             <!-- just image end -->
-            <a href="login" class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad  " type="button">login</a>
+            <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad   " data-toggle="modal"
+              data-target="#signmodal" type="button" value="Login">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto menu">
-                <!-- <form class="form-inline ml-auto menu"> -->
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle fas fa-home" href="" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    Home
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="home">HOME</a>
-                    <a class="dropdown-item" href="#about">About us</a>
-                    <!-- <a class="dropdown-item" href="#activity">Activity</a>
-                    <a class="dropdown-item" href="#review">Reviews</a>
-                    <a class="dropdown-item" href="#complaint">Complaints</a>
-                    <a class="dropdown-item" href="#other">Other service</a> -->
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#special">Special Offer</a>
-                    <!-- <a class="dropdown-item" href="#contact">Contact us</a> -->
-                  </div>
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-home " href="home"> Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link fas fa-cog " href="service"> Service<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                   <a class="nav-link fas fa-comments" href="chat"> Discussion<span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item active">
+                  <a class="nav-link fas fa-phone-alt" href="contact">Contact Us<span
+                      class="sr-only">(current)</span></a>
                 </li>
-
                 <li class="nav-item active">
                   <a class="nav-link fas fa-user" href="profile"> Profile<span class="sr-only">(current)</span></a>
                 </li>
@@ -113,6 +211,111 @@
       </div>
     </div>
   </div>
+  <!-- modAL -->
+  <div class="modal fade" id="signmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- con -->
+        <div class="card signup_v4 mb-30">
+          <div class="card-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation"> <a class="nav-link active" id="login-tab" data-toggle="tab"
+                  href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="register-tab" data-toggle="tab"
+                  href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a> </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
+                        class="form-control" id="#" placeholder="Enter your username"> </div>
+                    <div class="form-group col-md-12"> <label for="inputName">Your Password</label> <input
+                        type="password" class="form-control" id="#" placeholder="Enter your password"> </div>
+                    <div class="form-group col-md-12">
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="custom-checkbox d-block"> <label class="custom-control custom-checkbox checkbox-lg">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <div class="custom-control-label" for="customCheck1">Remember Password</div>
+                          </label> </div> <a href="#" target="_blank">Forgot Password?</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-2 mb-3 text-center "> <button class="btn btn-primary ">Login</button> </div>
+                </form>
+                <div class="social-area">
+                  <h3 class="title">Or</h3>
+                  <p class="text">Sign In with social media</p>
+                  <ul class="social-links">
+                    <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
+                    <li> <a href="#"> <i class="fab fa-google-plus-g"></i> </a> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Register</h4>
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Name</label> <input type="text"
+                        class="form-control" id="#" placeholder="Enter your name"> </div>
+                    <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
+                        class="form-control" id="#" placeholder="Enter your username"> </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Phone Number</label> <input
+                        type="tel" class="form-control" id="#" placeholder="Enter your Phone Number"> </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Email Address</label> <input
+                        type="email" class="form-control" id="#" placeholder="Enter your email address"> </div>
+                    <div class="form-group col-md-12"> <label for="inputName">Your Password</label> <input
+                        type="password" class="form-control" id="#" placeholder="Enter your password"> </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Confirm Password</label> <input
+                        type="password" class="form-control" id="#" placeholder="Enter your confirm password"> </div>
+
+                  </div>
+                  <div class="form-group form-row mt-2"> <label class="col-md-2 col-form-label user_group">I am
+                      a</label>
+                    <div class="col-md-10 pt-1">
+                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                          name="inlineRadioOptions" id="inlineRadio1" value="option1"> <label class="form-check-label"
+                          for="inlineRadio1">Customer</label> </div>
+                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                          name="inlineRadioOptions" id="inlineRadio2" value="option2"> <label class="form-check-label"
+                          for="inlineRadio2">Vendor</label> </div>
+                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
+                          name="inlineRadioOptions" id="inlineRadio2" value="option2"> <label class="form-check-label"
+                          for="inlineRadio2">Both</label> </div>
+                    </div>
+                  </div>
+                  <div class="form-group form-row">
+                    <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input
+                          type="checkbox" class="custom-control-input" id="customCheck1">
+                        <div class="custom-control-label" for="customCheck1">I agree with <a href="#"
+                            target="_blank">terms and conditions</a></div>
+                      </label> </div>
+                  </div>
+                  <hr class="mt-3 mb-4">
+                  <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                      <div class="custom-checkbox d-block"> <a href="#login"
+                          class="nav-link-inline font-size-sm" >Already have an account? Login</a> </div> <button
+                        class="btn btn-primary mt-3 mt-sm-0" type="submit">Register</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end con -->
+      </div>
+    </div>
+  </div>
+  <!-- end modal -->
   <!-- nav-end -->
   {% block content %}
   {% endblock %}
@@ -264,6 +467,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
@@ -272,6 +476,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     -->
+
+
 </body>
 
 </html>

@@ -20,3 +20,7 @@ def fnregistration(request):
     return render(request,'registration.html')       
 def fnwrkpro(request):
     return render(request,'wrkpro.html')                                           
+def fncontact(request):
+    return render(request,'contact.html')         
+def fnpayment(request):
+    return render(request,'payment.html')                                      

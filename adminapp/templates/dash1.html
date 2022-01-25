@@ -2,6 +2,52 @@
 {% block content %}
 {% load static %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    #sen{
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+  
+
+  // Load the Visualization API and the corechart package.
+  google.charts.load('current', { 'packages': ['corechart'] });
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Callback that creates and populates a data table,
+  // instantiates the pie chart, passes in the data and
+  // draws it.
+  function drawChart() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+      ['Income', 3],
+      ['Balance', 1],
+      ['Loss', 1],
+      ['Service', 1],
+      ['Profit', 2]
+    ]);
+
+    // Set chart options
+    var options = {
+      'title': 'Graphical Representation',
+      'width': 1000,
+      'height': 600
+    };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+</script>
 
 <header class="bg-surface-primary border-bottom pt-6">
     <div class="container-fluid">
@@ -11,14 +57,14 @@
                     <!-- Title -->
                     <h1 class="h2 mb-0 ls-tight">OVER ALL VIEW</h1>
                 </div> <!-- Actions -->
-                <div class="col-sm-6 col-12 text-sm-end">
+                <!-- <div class="col-sm-6 col-12 text-sm-end">
                     <div class="mx-n1"> <a href="#" class="btn d-inline-flex btn-sm btn-neutral border-base mx-1"> <span class=" pe-2"> <i class="bi bi-pencil"></i> </span> <span>Edit</span> </a> <a href="#" class="btn d-inline-flex btn-sm btn-primary mx-1"> <span class=" pe-2"> <i class="bi bi-plus"></i> </span> <span>Create</span> </a> </div>
-                </div>
+                </div> -->
             </div> <!-- Nav -->
             <ul class="nav nav-tabs mt-4 overflow-x border-0">
-                <li class="nav-item "> <a href="#" id="viewrequest" onclick="view()" class="nav-link  active">TurnOver</a> </li>
-                <li class="nav-item"> <a href="#" id="delectrequest" onclick="del()" class="nav-link font-regular">Delected</a> </li>
-                <li class="nav-item"> <a href="#" class="nav-link font-regular">File requests</a> </li>
+                <li class="nav-item"> <a href="#" id="graph" onclick="graph()"  class="nav-link active">Graphical View</a> </li>
+                <li class="nav-item "> <a href="#" id="viewrequest" onclick="view()" class="nav-link  font-regular">Pending Request</a> </li>
+                <li class="nav-item"> <a href="#" id="delectrequest" onclick="del()" class="nav-link font-regular">Delected Request</a> </li>
             </ul>
         </div>
     </div>
@@ -80,7 +126,16 @@
                 </div>
             </div>
         </div>
-        <div class="card shadow border-0 mb-7" id="workpen">
+         <!-- graph -->
+         <div class="card shadow border-0 mb-7" id="viewgraph" >
+            <div class="card-header">
+                <h5 class="mb-0">Graphical Analysis</h5>
+            </div>
+            <div id="chart_div"></div>
+        </div>
+        <!-- end graph -->
+        <!-- pen -->
+        <div class="card shadow border-0 mb-7" id="workpen" style="display: none;">
             <div class="card-header">
                 <h5 class="mb-0">Worker Pending</h5>
             </div>
@@ -103,7 +158,7 @@
                             <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Carpenter </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
                             <td> <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Darlene Robertson </a> </td>
@@ -111,7 +166,7 @@
                             <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Painter </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Part Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
                             <td> <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Theresa Webb </a> </td>
@@ -119,7 +174,7 @@
                             <td>  <a class="text-heading font-semibold" href="#"> Cleaning Service </a> </td>
                             <td> Pest Control </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
                             <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
@@ -127,7 +182,7 @@
                             <td>  <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
                             <td> Computer Repair </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
                             <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
@@ -135,13 +190,32 @@
                             <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
                             <td> Photography </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
                         </tr>
+                     <span id="sen">
+                            <tr>
+                                <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
+                                <td> Feb 15, 2021 </td>
+                                <td>  <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
+                                <td> Computer Repair </td>
+                                <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span> </td>
+                                <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            </tr>
+                            <tr >
+                                <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
+                                <td> Apr 10, 2021 </td>
+                                <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
+                                <td> Photography </td>
+                                <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span> </td>
+                                <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            </tr>
+                        </span>
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer border-0 py-5"> <span class="text-muted text-sm">Showing 10 items out of 250 results found</span> </div>
+            <div class="card-footer border-0 py-5"> <p class="text-muted text-sm">Showing 10 items out of 250 results found</p> <button  id="plus">view</button></div>
         </div>
+        <!-- end pen -->
         <!-- del -->
         <div class="card shadow border-0 mb-7" id="delreq" style="display: none;">
             <div class="card-header">
@@ -205,51 +279,21 @@
                             <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
 
                         </tr>
+                        
                     </tbody>
                 </table>
             </div>
 
         </div>
         <!-- end del -->
+       
     </div>
 </main>
+<script src="{% static 'js/dash1.js' %}"></script>
 <script>
-    $('#delectrequest').click(function(){
-        $('#delreq').show()
-        $('#workpen').hide()
-        
-    })
-    $('#viewrequest').click(function(){
-        $('#workpen').show()
-        $('#delreq').hide()
-        
-    })
-function del(){
-    document.getElementById('delectrequest').click()
-    var del = document.getElementById('delectrequest');
-    var pen = document.getElementById('viewrequest');
-      del.classList.add('active');
-      del.classList.remove('font-regular');
-      pen.classList.remove('active');
-      pen.classList.add('font-regular');    
-}
-function view(){
-    
-    document.getElementById('viewrequest').click()
-    var del = document.getElementById('delectrequest');
-    var pen = document.getElementById('viewrequest');
-    pen.classList.add('active');
-    pen.classList.remove('font-regular');
-    del.classList.remove('active');
-    del.classList.add('font-regular');
-
-
-
-}
-
-
-
-    
+       $("#plus").click(function() {
+  $("#sen").toggle();
+})
 
 </script>
 
