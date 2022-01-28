@@ -1,95 +1,123 @@
-body{
-    background: -webkit-linear-gradient(left, #bdc3c7 , #2c3e50);
+.body{
+    margin-top:20px;
 }
-.emp-profile{
-    padding: 3%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    border-radius: 0.5rem;
-    background: #fff;
-}
-.profile-img{
-    text-align: center;
-}
-.profile-img img{
-    width: 70%;
-    height: 100%;
-}
-.profile-img .file {
+.section {
+    padding: 100px 0;
     position: relative;
-    overflow: hidden;
-    margin-top: -20%;
-    width: 70%;
-    border: none;
-    border-radius: 0;
-    font-size: 15px;
-    background: #212529b8;
 }
-.profile-img .file input {
-    position: absolute;
-    opacity: 0;
-    right: 0;
-    top: 0;
+.gray-bg {
+    background-color: #f5f5f5;
 }
-.profile-head h5{
-    color: #333;
+img {
+    max-width: 100%;
 }
-.profile-head h6{
-    color: #0062cc;
+img {
+    vertical-align: middle;
+    border-style: none;
 }
-.profile-edit-btn{
-    border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
-    cursor: pointer;
+/* About Me 
+---------------------*/
+.about-text h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 6px;
 }
-.proile-rating{
-    font-size: 12px;
-    color: #818182;
-    margin-top: 5%;
+@media (max-width: 767px) {
+  .about-text h3 {
+    font-size: 35px;
+  }
 }
-.proile-rating span{
-    color: #495057;
-    font-size: 15px;
-    font-weight: 600;
+.about-text h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-.profile-head .nav-tabs{
-    margin-bottom:5%;
+@media (max-width: 767px) {
+  .about-text h6 {
+    font-size: 18px;
+  }
 }
-.profile-head .nav-tabs .nav-link{
-    font-weight:600;
-    border: none;
+.about-text p {
+  font-size: 18px;
+  max-width: 450px;
 }
-.profile-head .nav-tabs .nav-link.active{
-    border: none;
-    border-bottom:2px solid #0062cc;
+.about-text p mark {
+  font-weight: 600;
+  color: #20247b;
 }
-.profile-work{
-    padding: 14%;
-    margin-top: -15%;
+
+.about-list {
+  padding-top: 10px;
 }
-.profile-work p{
-    font-size: 12px;
-    color: #818182;
-    font-weight: 600;
-    margin-top: 10%;
+.about-list .media {
+  padding: 5px 0;
 }
-.profile-work a{
-    text-decoration: none;
-    color: #495057;
-    font-weight: 600;
-    font-size: 14px;
+.about-list label {
+  color: #20247b;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
 }
-.profile-work ul{
-    list-style: none;
+.about-list label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  width: 1px;
+  height: 12px;
+  background: #20247b;
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin: auto;
+  opacity: 0.5;
 }
-.profile-tab label{
-    font-weight: 600;
+.about-list p {
+  margin: 0;
+  font-size: 15px;
 }
-.profile-tab p{
-    font-weight: 600;
-    color: #0062cc;
+
+@media (max-width: 991px) {
+  .about-avatar {
+    margin-top: 30px;
+  }
 }
+
+.about-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+}
+.about-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.about-section .counter .count {
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
+}
+.about-section .counter p {
+  font-weight: 600;
+  margin: 0;
+}
+mark {
+    background-image: linear-gradient(rgba(252, 83, 86, 0.6), rgba(252, 83, 86, 0.6));
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: 0 bottom;
+    background-color: transparent;
+    padding: 0;
+    color: currentColor;
+}
+.theme-color {
+    color: #fc5356;
+}
+.dark-color {
+    color: #20247b;
+} 
+

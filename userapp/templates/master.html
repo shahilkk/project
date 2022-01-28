@@ -20,40 +20,38 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
   <link rel="stylesheet" href="{% static 'css/master.css' %}">
   <title>website</title>
   <style>
-    .btn-grad {
-      background-image: linear-gradient(to right, #abbaab 0%, #ffffff 51%, #abbaab 100%)
+    body {
+      font-family: 'Ubuntu', sans-serif;
     }
 
-    .btn-grad {
+    .btn-grad2 {
       /* margin: 10px;
        padding: 15px 45px; */
       text-align: center;
       text-transform: uppercase;
       transition: 0.5s;
       background-size: 200%;
-      color: rgb(0, 0, 0);
-      box-shadow: 0 0 20px #eee;
+      /* color: rgb(0, 0, 0); */
+      /* box-shadow: 0 0 20px #eee; */
       border-radius: 10px;
       display: block;
     }
 
-    .btn-grad:hover {
+    .btn-grad2:hover {
       background-position: right center;
-
       color: rgb(0, 0, 0);
       text-decoration: none;
     }
 
-    .pro a {
-      color: black;
-    }
-
-    .ico a {
-      border-radius: 50%;
-    }
 
     /* modal */
     .signup_v4 .social-area {
@@ -134,11 +132,11 @@
     }
 
     .signup_v4 .nav-tabs .nav-link.active {
-      background: #bdc3c7
+      background: #143250
     }
 
     .signup_v4 .nav-tabs .nav-link {
-      background: #143250
+      background: #bdc3c7
     }
 
     .signup_v4 .nav-tabs .nav-link {
@@ -163,52 +161,70 @@
     }
 
     /* end modal */
+    .nav {
+      background-image: linear-gradient(to left, #000428, #004e92);
+
+    }
+
+    .white {
+      color: white;
+    }
+
+    .pro a {
+      color: white;
+    }
+
+    .ico a {
+      border-radius: 50%;
+    }
+
+    .error {
+      color: red;
+    }
   </style>
 
 </head>
 
 <body data-spy="scroll" data-target="#navbarSupportedContent">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 ">
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light   back" id="nav" role="navigation">
-          <div class="container-fluid">
+  <div class="row" style="margin: 0;">
+    <div class="col-lg-12 ">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light    nav" id="nav" role="navigation">
+        <div class="container-fluid">
 
 
-            <!-- Just an image -->
-            <a class="navbar-brand  fab fa-wolf-pack-battalion" style="font-size: 40px;font-weight: 400;" href="#"> EC
-              job</a>
-            <!-- just image end -->
-            <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad   " data-toggle="modal"
-              data-target="#signmodal" type="button" value="Login">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto menu">
-                <li class="nav-item active">
-                  <a class="nav-link fas fa-home " href="home"> Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link fas fa-cog " href="service"> Service<span class="sr-only">(current)</span></a>
-                </li>
-                <!-- <li class="nav-item active">
+          <!-- Just an image -->
+          <a class="navbar-brand  fab fa-wolf-pack-battalion" style="font-size: 40px;font-weight: 400; color: white;"
+            href="#"> EC
+            job</a>
+          <!-- just image end -->
+          <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;"
+            data-toggle="modal" data-target="#signmodal" type="button" value="Login">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto menu">
+              <li class="nav-item active">
+                <a class="nav-link fas fa-home " href="home"> Home<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link fas fa-cog " href="service"> Service<span class="sr-only">(current)</span></a>
+              </li>
+              <!-- <li class="nav-item active">
                   <a class="nav-link fas fa-comments" href="chat"> Discussion<span class="sr-only">(current)</span></a>
                 </li> -->
-                <li class="nav-item active">
-                  <a class="nav-link fas fa-phone-alt" href="contact">Contact Us<span
-                      class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link fas fa-user" href="profile"> Profile<span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-            </div>
+              <li class="nav-item active">
+                <a class="nav-link fas fa-phone-alt" href="contact">Contact Us<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link fas fa-user" href="profile"> Profile<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   </div>
   <!-- modAL -->
@@ -227,12 +243,13 @@
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
-                <form>
+                <form id="loginform">
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
-                        class="form-control" id="#" placeholder="Enter your username"> </div>
+                        class="form-control" id="#" name="username" placeholder="Enter your username"> </div>
                     <div class="form-group col-md-12"> <label for="inputName">Your Password</label> <input
-                        type="password" class="form-control" id="#" placeholder="Enter your password"> </div>
+                        type="password" class="form-control" name="password1" id="#" placeholder="Enter your password">
+                    </div>
                     <div class="form-group col-md-12">
                       <div class="d-flex flex-wrap justify-content-between align-items-center">
                         <div class="custom-checkbox d-block"> <label class="custom-control custom-checkbox checkbox-lg">
@@ -242,7 +259,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="mt-2 mb-3 text-center "> <button class="btn btn-primary ">Login</button> </div>
+                  <div class="mt-2 mb-3 text-center "> <button class="btn btn-primary " type="submit">Login</button>
+                  </div>
                 </form>
                 <div class="social-area">
                   <h3 class="title">Or</h3>
@@ -253,12 +271,12 @@
                   </ul>
                 </div>
               </div>
-              <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <div class="tab-pane fade reg" id="register" role="tabpanel" aria-labelledby="register-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Register</h4>
-                <form>
+                <form id="reg">
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Name</label> <input type="text"
-                        class="form-control" id="#" placeholder="Enter your name"> </div>
+                        class="form-control" id="#" name="name" placeholder="Enter your name"> </div>
                     <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
                         class="form-control" id="#" placeholder="Enter your username"> </div>
                   </div>
@@ -277,20 +295,6 @@
                         type="password" class="form-control" id="#" placeholder="Enter your confirm password"> </div>
 
                   </div>
-                  <div class="form-group form-row mt-2"> <label class="col-md-2 col-form-label user_group">I am
-                      a</label>
-                    <div class="col-md-10 pt-1">
-                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
-                          name="inlineRadioOptions" id="inlineRadio1" value="option1"> <label class="form-check-label"
-                          for="inlineRadio1">Customer</label> </div>
-                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
-                          name="inlineRadioOptions" id="inlineRadio2" value="option2"> <label class="form-check-label"
-                          for="inlineRadio2">Vendor</label> </div>
-                      <div class="form-check form-check-inline"> <input class="form-check-input" type="radio"
-                          name="inlineRadioOptions" id="inlineRadio2" value="option2"> <label class="form-check-label"
-                          for="inlineRadio2">Both</label> </div>
-                    </div>
-                  </div>
                   <div class="form-group form-row">
                     <div class="col-md-12"> <label class="custom-control custom-checkbox checkbox-lg"> <input
                           type="checkbox" class="custom-control-input" id="customCheck1">
@@ -302,7 +306,7 @@
                   <div class="col-12">
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
                       <div class="custom-checkbox d-block"> <a href="#login"
-                          class="nav-link-inline font-size-sm" >Already have an account? Login</a> </div> <button
+                          class="nav-link-inline font-size-sm">Already have an account? Login</a> </div> <button
                         class="btn btn-primary mt-3 mt-sm-0" type="submit">Register</button>
                     </div>
                   </div>
@@ -320,40 +324,39 @@
   {% block content %}
   {% endblock %}
   <!-- Footer -->
-
-  <footer class="page-footer font-small mdb-color pt-4 foot">
+  <footer class="page-footer font-small mdb-color pt-4 nav">
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left ">
+    <div class="container-fluid text-center text-md-left ">
 
       <!-- Footer links -->
-      <div class="row text-center text-md-left mt-3 pb-3 ">
+      <div class="row text-center text-md-left pb-3 " style="margin: 0;">
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-          <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur
-            adipisicing elit.</p>
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 white">
+          <h6 class="text-uppercase mb-4 font-weight-bold ">Ec_job</h6>
+          <p>Welcome to Ec_job You may use our services through our website www.ecjob.in (“Website”) . Our Website been
+            created to provide information about our company and services to the visitors and user of services, whether
+            accessible to you via web, or other platform (our services, together with the Site, are the "Services").</p>
         </div>
         <!-- Grid column -->
 
         <hr class="w-100 clearfix d-md-none">
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 pro">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 pro white">
+          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
           <p>
-            <a href="#!">MDBootstrap</a>
+            <a href="home">Home</a>
           </p>
           <p>
-            <a href="#!">MDWordPress</a>
+            <a href="service">Service</a>
           </p>
           <p>
-            <a href="#!">BrandFlow</a>
+            <a href="contact">Contact Us</a>
           </p>
           <p>
-            <a href="#!">Bootstrap Angular</a>
+            <a href="profile">Profile</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -362,18 +365,24 @@
 
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 pro">
-          <h6 class="text-uppercase mb-4 font-weight-bold "> Useful links</h6>
+          <h6 class="text-uppercase mb-4 font-weight-bold white ">Our Services</h6>
           <p>
-            <a href="#!">Your Account</a>
+            <a href="service">Electronics & Appliances</a>
           </p>
           <p>
-            <a href="#!">Become an Affiliate</a>
+            <a href="service">Home Maintenance</a>
           </p>
           <p>
-            <a href="#!">Shipping Rates</a>
+            <a href="service">Cleaning Service</a>
           </p>
           <p>
-            <a href="#!">Help</a>
+            <a href="service">Events & Occasions</a>
+          </p>
+          <p>
+            <a href="service">Automobile Services</a>
+          </p>
+          <p>
+            <a href="service">Others</a>
           </p>
         </div>
 
@@ -381,16 +390,16 @@
         <hr class="w-100 clearfix d-md-none">
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 white">
           <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
           <p>
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US
+            <i class="fas fa-home mr-3"></i> Arimbra, Malappuram
           </p>
           <p>
-            <i class="fas fa-envelope mr-3"></i> info@gmail.com
+            <i class="fas fa-envelope mr-3"></i> ecjob@gmail.com
           </p>
           <p>
-            <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+            <i class="fas fa-phone mr-3"></i> 9207634567
           </p>
           <p>
             <i class="fas fa-print mr-3"></i> + 01 234 567 89
@@ -410,7 +419,7 @@
         <div class="col-md-7 col-lg-8">
 
           <!--Copyright-->
-          <p class="text-center text-md-left">© 2020 Copyright:
+          <p class="text-center text-md-left white">© 2020 Copyright:
 
           </p>
 
@@ -452,7 +461,87 @@
       <!-- Footer Links -->
 
   </footer>
+
   <!-- end footer -->
+
+
+  <!-- <script>
+    $(window).scroll(function(){
+     if($(document).scrollTop() < 1){
+      $('nav').removeClass('fixed')
+      $('nav').removeClass('active')
+
+     }
+     else if($(document).scrollTop() > 100){
+      $('nav').removeClass('fixed')
+      $('nav').addClass('active')
+      }
+      else{
+        $('nav').addClass('fixed')
+
+      }
+    })
+  </script>  -->
+
+
+  <script>
+    $('#loginform').validate({
+      rules: {
+        username: {
+          required: true,
+          minlength: 6,
+        },
+        password1: {
+          required: true,
+          minlength: 6,
+        }
+      },
+      messages: {
+        username: {
+
+          required: "Enter your user  name",
+          minlength: "alteast 6",
+        },
+        password1: {
+          required: "Enter your password",
+          minlength: "alteast 6",
+        },
+      },
+      SubmitHandler: function (loginform) {
+        form.submit();
+      }
+
+    })
+
+
+    // -----------------------------------
+    $('#reg').validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 6,
+        },
+        usrname: {
+          required: true,
+          minlength: 6,
+        }
+      },
+      messages: {
+        name: {
+          required: "Enter your user  name",
+          minlength: "alteast 6",
+        },
+        usrname: {
+          required: "Enter your password",
+          minlength: "alteast 6",
+        },
+      },
+      SubmitHandler: function (reg) {
+        form.submit();
+      }
+    })
+
+  </script>
 
 
 

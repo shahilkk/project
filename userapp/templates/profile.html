@@ -1,6 +1,13 @@
 {% extends 'master.html' %}
 {% block content %}
 {% load static %}
+<style>
+      .editbtn{
+  border-radius: 10px;
+  background-color: #20247b;
+  color: white;
+}
+</style>
 
 <!-- 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,151 +15,64 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <!------ Include the above in your HEAD tag ---------->
 <link rel="stylesheet" href="{% static 'css/profile1.css' %}">
-
-
-<div class="container emp-profile">
-            <form method="post">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-img">
-                            <img src="https://th.bing.com/th/id/R.dc3429e352ebb8e7e32fc41535174853?rik=i%2fEM9kY9PWysZA&riu=http%3a%2f%2fwww.clker.com%2fcliparts%2fb%2fb%2fb%2f1%2f11971019011240434834msewtz_Business_Person.svg.hi.png&ehk=WQqENQCoAkVI%2fT%2bQKTtjW6%2bnsTCBSC8iRtBOaNUMUj4%3d&risl=&pid=ImgRaw&r=0" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
+<div class="body">
+<section class="section about-section gray-bg" id="about">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse" style="margin: 0;">
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="about-text go-to">
+                    <h3 class="dark-color">Shadil KM</h3>
+                    <div class="row about-list">
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>Birthday</label>
+                                <p>4th april 1998</p>
+                            </div>
+                            <div class="media">
+                                <label>Age</label>
+                                <p>22 Yr</p>
+                            </div>
+                            <div class="media">
+                                <label>Residence</label>
+                                <p>Canada</p>
+                            </div>
+                            <div class="media">
+                                <label>Address</label>
+                                <p>California, USA</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h5>
-                                        Kshiti Ghelani
-                                    </h5>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                </li>
-                            </ul>
+                        <div class="col-md-6">
+                            <div class="media">
+                                <label>E-mail</label>
+                                <p>info@domain.com</p>
+                            </div>
+                            <div class="media">
+                                <label>Phone</label>
+                                <p>820-885-3321</p>
+                            </div>
+                            <div class="media">
+                                <label>Skype</label>
+                                <p>skype.0404</p>
+                            </div>
+                            <div class="media">
+                                <label>Freelance</label>
+                                <p>Available</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
-                        <input type="submit" value="Edit" class="profile-edit-btn">
+                           <div class="col-lg-12 mx-auto">
+                               <input type="button" value="Edit" class="editbtn">
+                            </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="profile-work">
-                            <p>Social media</p>
-                            <a href="">Facebook Link</a><br/>
-                            <a href="">Whatsapp Link</a><br/>
-                            <a href="">Instagram Link</a>
-                         
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
-                                            </div>
-                                        </div>
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
-                                            </div>
-                                        </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="about-avatar">
+                    <img src="{% static 'img/p2.png' %}" title="" alt="">
                 </div>
-            </form>           
+            </div>
         </div>
-
-
+        
+    </div>
+</section>
+</div>
 {% endblock %}

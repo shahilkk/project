@@ -1,6 +1,9 @@
 {% extends 'master.html' %}
 {% block content %}
 {% load static %}
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <style>
     .fa-map-marker,
     .fa-phone,
@@ -10,7 +13,8 @@
     }
 
     .iconcon {
-        color: rgb(105, 27, 179)
+        /* color: rgb(105, 27, 179) */
+        color: #004e92;
     }
     .contact-info{
         /* justify-content: center; */
@@ -69,10 +73,13 @@
     width: 100%;
 }
 </style>
-
-<div class="row cont-img text-center mx-auto">
-    <img src="{% static 'img/con2.jpg' %}" class="img-fluid" alt="...">
+<div class="container-fluid">
+    <div class="row cont-img text-center mx-auto">
+        <img src="{% static 'img/con2.jpg' %}" class="img-thumbnail" alt="...">
+    </div>
 </div>
+
+
 <div class="container">
     <div class="contact__wrapper shadow-lg mt-n9">
         <div class="row no-gutters">
@@ -82,13 +89,13 @@
                 <hr>
                 <div class="row">
                     <div class="col-lg-6 contact-formwrapper p-5 order-lg-1">
-                        <form action="#" class="contact-form form-validate">
+                        <form action="#" class="contact-form form-validate" id="contact">
 
                             <div class="row">
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="firstName">First Name</label>
-                                        <input type="text" class="form-control" id="firstName" name="firstName"
+                                        <input type="text" class="form-control" id="firstName" name="firstname1"
                                             placeholder="">
                                     </div>
                                 </div>
@@ -96,7 +103,7 @@
                                 <div class="col-sm-6 mb-3">
                                     <div class="form-group">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName" name="lastName"
+                                        <input type="text" class="form-control" id="lastName" name="lastname"
                                             placeholder="">
                                     </div>
                                 </div>
@@ -174,5 +181,35 @@
     </div>
 
 </div>
+<script>
+   $('#contact').validate({
+      rules: {
+        firstname1: {
+          required: true,
+          minlength: 6,
+        },
+        lastname: {
+          required: true,
+          minlength: 6,
+        }
+      },
+      messages: {
+        firstname1: {
+
+          required: "Enter your first  name",
+          minlength: "alteast 6",
+        },
+        lastname: {
+          required: "Enter your last name",
+          minlength: "alteast 6",
+        },
+      },
+      SubmitHandler: function (contact) {
+        form.submit();
+      }
+
+    })
+
+</script>
 
 {% endblock %}

@@ -6,13 +6,11 @@ html,body {
     }
 
     .back {
-      background-color: #bdc3c7;
+      /* background-color: #242333; */
       /* height: 75px; */
     }
 
-    .foot {
-      background-color: #8e9eab;
-    }
+  
 
     .menu a {
 
@@ -58,5 +56,25 @@ html,body {
     .navbar-light .navbar-nav .nav-link {
       color: #ffff;
     }
+     /* sticky */
+
+    /* .navb{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      transition: all 0.1s ease-in-out;
+     } */
+  /* nav .fixed{
+   opacity: 0;
+   transform: translateY(-50%);
+ }
+  nav .active{
+   transition: all 0.4s ease-in-out;
+   background-image: linear-gradient(to left,#000428,#004e92);
+   opacity: 1;
+   transform: none;
+ } */
     
    

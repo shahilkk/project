@@ -2,11 +2,7 @@
 {% block content %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/view.css' %}">
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script> -->
-<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"> -->
+
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
@@ -16,12 +12,15 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <!--  -->
-<!-- <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
-<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script> -->
+
 
 
 
 <style>
+  .error {
+    color: red;
+  }
+
   .row1 {
     padding: 50px;
   }
@@ -29,10 +28,9 @@
   .form {
     height: 500px;
     width: 300px;
-
+    background-color: white;
     justify-content: center;
     text-align: center;
-    /* margin: 50px 0 0 200px; */
   }
 
   .form input {
@@ -43,8 +41,7 @@
   }
 
   .form select {
-    margin: 10px;
-    padding: 3px;
+
     border-radius: 10px;
   }
 
@@ -56,106 +53,113 @@
     border-radius: 20px;
 
   }
+  #quickform button{
+    background-color: #004e92;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+  }
 </style>
 
-<div class="container-fluid con">
-  <div class="row">
+<div class="container ">
+  <div class="row" style="margin: 0;">
     <div class="col-lg-12">
-        <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{% static 'img/service/p2.png' %}" class=" img-fluid " style="width: auto;" alt="...">
-                    <div class="carousel-caption d-block d-md-block bread ">
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
+      <h3 class="text-center mt-5">Quick Booking</h3><br>
     </div>
-
-</div>
-  <div class="row row1">
-
-    <div class="col-lg-12 col-12 mr-auto ">
-      <div class="form">
-        <form action="" id="quickform">
-          <h3>Quick Booking</h3><br>
-          <select name="" id="selectbox">
-
-            <option value="" disabled selected>Choose your problem</option>
-            <option value="Electronics">Electronics problem</option>
-            <option value="Appliances">Appliances problem</option>
-            <option value="Home Maintenance">Home Maintenance problem</option>
-            <option value="Cleaning problem">Cleaning problem</option>
-            <option value="Events & Occasions">Events & Occasions</option>
-            <option value="Automobile Services">Automobile Services</option>
-            <option value="Health & Personals">Health & Personals</option>
-            <option value="Other">Other</option>
-          </select>
-          <div class="mb-4 pb-2">
-            <div class="">
-              <select class="select   " id="electronicbox" style="display: none;">
-                <option value="computer repair"> Computer Repair</option>
-                <option value=" mobile repair">Mobile Repair</option>
-                <option value=" Tv repair">Tv Repair</option>
-                <option value="Cctv repair">Cctv Repair</option>
-                <option value="Printer repair">Printer Repair</option>
-                <option value="Invertor repair">Invertor repair</option>
-                <option value="Water Pump Repair">Water Pump Repair</option>
-                <option value="Chimney Repair">Chimney Repair"</option>
-                <option value="Electric Geyser Repair">Electric Geyser Repair</option>
-                <option value="Dishwasher Repair">Dishwasher Repair</option>
-                <option value="AC Repair">AC Repair</option>
-                <option value="DTH Repair">DTH Repair</option>
-                <option value="Refrigerator Repair">Refrigerator Repair</option>
-                <option value="Washing Machine Repair">Washing Machine Repair</option>
-              </select>
-            </div>
-          </div>
-
-          <input type="text" name="name" placeholder="enter your name">
-          <input type="text" name="place" placeholder="enter your housename/street ">
-          <input type="email" name="email" placeholder="email id">
-          <input type="tel" name="phone" placeholder="phone number"><br>
-          <!-- <div class="input-group registration-date-time">
-            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
-            <input class="form-control" name="registration_date" id="registration-date" type="date">
-            <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></span>
-            <input class="form-control" name="registration_time" id="registration-time" type="time">
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button" onclick="addNow()"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Now</button>
-                  <button class="btn btn-default" type="button" onclick="stopNow()"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Stop</button>
-                </span>
-          </div> -->
-          
-          <button type="submit">book now</button>
-
-        </form>
-      </div>
-    </div>
-
   </div>
 
-  <div class="row  row1">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="our-team">
-          <div class="picture">
-            <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
-          </div>
-          <div class="team-content">
-            <h3 class="name">Michele Miller</h3>
-            <h4 class="title">Computer Service</h4>
-            <a href="wrkpro" style="color: black; text-decoration: none;">view profile</a>
-          </div>
-          <ul class="social">
-            <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-facebook" aria-hidden="true"></a></li>
-            <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-twitter" aria-hidden="true"></a></li>
-            <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-google-plus" aria-hidden="true"></a></li>
-            <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-linkedin" aria-hidden="true"></a></li>
-          </ul>
+  <div class="row">
+    <div class="col-md-6" style="margin: 0;">
+      <form id="quickform">
+        <div class="form-group">
+          <label for="">Name</label>
+          <input type="text" class="form-control" name="name" id="" placeholder="Enter your Name">
         </div>
-      
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="">Place</label>
+            <input type="text" name="place" class="form-control" id="" placeholder="Enter your Place">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="">Phone</label>
+            <input type="text" name="phone" class="form-control" id="" placeholder="Enter your Mobile Number">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Address </label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Enter your address">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="land">Landmark</label>
+            <input type="text" class="form-control" id="" placeholder="Enter your Landmark">
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="" placeholder="Enter your City">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="">Location</label>
+            <input type="text" class="form-control" id="" placeholder="Enter your Location">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="">Pincode</label>
+            <input type="text" class="form-control" id="" placeholder="Enter your Pincode">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <button type="submit" >Book Now</button>
+      </form>
+
+    </div>
+    <div class="col-md-6 ">
+      <div id="carouselExampleSlidesOnly" class="carousel " data-ride="carousel">
+        <div class="carousel-inner  mt-5">
+          <div class="carousel-item active">
+            <img src="{% static 'img/booknow.jpg' %}" class=" img-thumbnail" alt="...">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div class="container-fluid">
+  <div class="row  row1" style="margin: 0;">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="our-team">
+        <div class="picture">
+          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+        </div>
+        <div class="team-content">
+          <h3 class="name">Michele Miller</h3>
+          <h4 class="title">Computer Service</h4>
+          <a href="wrkpro" style="color: black; text-decoration: none;">view profile</a>
+        </div>
+        <ul class="social">
+          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-facebook" aria-hidden="true"></a></li>
+          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-twitter" aria-hidden="true"></a></li>
+          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-google-plus" aria-hidden="true"></a></li>
+          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fab fa-linkedin" aria-hidden="true"></a></li>
+        </ul>
+      </div>
+
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="our-team">
@@ -220,18 +224,8 @@
 
 </div>
 <script>
-//   function addNow() {
-//   nowDate = moment().tz("Europe/London").format('YYYY-MM-DD');
-//   nowTime = moment().tz("Europe/London").format('HH:mm:ss');
-//   document.getElementById('registration-date').value = nowDate;
-//   document.getElementById('registration-time').value = nowTime;
-//   set = setTimeout(function () { addNow(); }, 1000);
-// }
 
-// function stopNow() {
-//   clearTimeout(set);
-// }
-     
+
   $('#selectbox').click(function () {
     if ($('#selectbox').val() == "Electronics") {
       $('#electronicbox').show()
