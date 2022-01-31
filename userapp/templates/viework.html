@@ -16,6 +16,8 @@
 
 
 
+
+
 <style>
   .error {
     color: red;
@@ -59,6 +61,8 @@
     color: white;
     border-radius: 20px;
   }
+  
+  
 </style>
 
 <div class="container ">
@@ -88,12 +92,12 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputAddress">Address </label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Enter your address">
+            <input type="text" class="form-control" id="" name="address" placeholder="Enter your address">
           </div>
 
           <div class="form-group col-md-6">
             <label for="land">Landmark</label>
-            <input type="text" class="form-control" id="" placeholder="Enter your Landmark">
+            <input type="text" class="form-control" id="" name="landmark" placeholder="Enter your Landmark">
           </div>
         </div>
 
@@ -101,18 +105,34 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="" placeholder="Enter your City">
+            <input type="text" class="form-control" id="" name="city" placeholder="Enter your City">
           </div>
 
           <div class="form-group col-md-4">
             <label for="">Location</label>
-            <input type="text" class="form-control" id="" placeholder="Enter your Location">
+            <input type="text" class="form-control" id="" name="location" placeholder="Enter your Location">
           </div>
           <div class="form-group col-md-4">
             <label for="">Pincode</label>
-            <input type="text" class="form-control" id="" placeholder="Enter your Pincode">
+            <input type="text" class="form-control" id="" name="pincode" placeholder="Enter your Pincode">
           </div>
+
         </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="">Date</label>
+            <input type="date" class="form-control" id="">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="">Time</label>
+            <input type="time" class="form-control" id="">
+          </div>
+         
+
+        </div>
+        
         <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -226,6 +246,7 @@
 <script>
 
 
+
   $('#selectbox').click(function () {
     if ($('#selectbox').val() == "Electronics") {
       $('#electronicbox').show()
@@ -256,6 +277,29 @@
         maxlength: 10,
         minlength: 10,
       },
+      address: {
+        required: true,
+        minlength: 5,
+      },
+      landmark: {
+        required: true,
+        minlength: 5,
+      },
+      city: {
+        required: true,
+        minlength: 5,
+      },
+      location: {
+        required: true,
+        minlength: 5,
+      },
+      pincode: {
+        required: true,
+        number: true,
+        maxlength: 6,
+        minlength: 6,
+      },
+     
     },
 
     messages: {
@@ -276,9 +320,32 @@
       },
       phone: {
         required: 'enter phone number',
-        number: 'valied phone number',
+        number: 'valid phone number',
         maxlength: 'no more than 10  ',
         minlength: 'no less than 10',
+      },
+      address: {
+        required: "*please fill this field",
+        minlength: "atleast 5"
+      },
+      landmark: {
+        required: "please fill this field",
+        minlength: "atleast 5"
+      },
+      city: {
+        required: "*please fill this field",
+        minlength: "atleast 5"
+      },
+      location: {
+        required: "please fill this field",
+        minlength: "atleast 5"
+      },
+      pincode: {
+        required: "*please fill this field",
+        number: 'valid pincode ',
+        maxlength: 'no more than 6 ',
+        minlength: 'no less than 6',
+
       },
 
 

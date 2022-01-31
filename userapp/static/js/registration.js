@@ -1,4 +1,4 @@
-
+// border color
 $('#firstname').keyup(function () {
   first = $('#firstname').val()
   if (first.length <= 4) {
@@ -134,6 +134,7 @@ $('#age').keyup(function () {
 // });
 
 
+// end border color
 
 
 
@@ -196,6 +197,122 @@ $('#selectbox').click(function () {
 
 
   // validation
+  
+$('#form1').validate({
+  rules: {
+    firstname: {
+      required: true,
+      minlength: 6,
+    },
+    lastname: {
+      required: true,
+      minlength: 4,
+    },
+    email: {
+      required: true,
+      email: true,
+    },
+    phone: {
+      required: true,
+      number: true,
+      minlength: 10,
+      maxlength: 10,
+    },
+    dob: {
+      required: true,
+      date: true,
+      dateFormat: true,
+    },
+    age: {
+      required: true,
+      number: true,
+      minlength: 2,
+    },
+    address: {
+      required: true,
+    },
+    addition: {
+      required: true,
+    },
+    pin: {
+      required: true,
+    },
+    place: {
+      required: true,
+    },
+    district: {
+      required: true,
+    },
+    state: {
+      required: true,
+    },
+    loca: {
+      required: true,
+    },
+    educ: {
+      required: true,
+    },
+  },
+  messages: {
+    firstname: {
+      required: "Enter your First name",
+      minlength: "alteast 6",
+    },
+    lastname: {
+      required: "Enter your last name",
+      minlength: "alteast 4",
+    },
+    email: {
+      required: "Enter your Email Addreaa",
+      email: "Enter Valid Email Address",
+    },
+    phone: {
+      required: "Enter your phone number",
+      number: "Enter Number",
+      minlength: "minimum length 10",
+      maxlength: "Not more than 10"
+
+    },
+    dob: {
+      required: "Enter Your Dob",
+      date: "Select date",
+      dateFormat: "Correct Format",
+    },
+    age: {
+      required: "Enter your age",
+      number: "Enter Number",
+      minlength: "You Should be above 10",
+    },
+    address: {
+      required: "Enter your Address",
+    },
+    addition: {
+      required: "Enter your additional Address",
+    },
+    pin: {
+      required: "Enter your pin",
+    },
+    place: {
+      required: "Enter your place",
+    },
+    district: {
+      required: "Enter your district",
+    },
+    state: {
+      required: "Enter your state",
+    },
+    loca: {
+      required: "Enter your Location",
+    },
+    educ: {
+      required: "Enter your Education Qualification",
+    },
+  },
+  SubmitHandler: function (form1) {
+    form.submit();
+  }
+})
+
  
 
   // end validation

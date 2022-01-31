@@ -5,48 +5,45 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<style>
-    #sen{
-        display: none;
-    }
-</style>
+
+
 <script type="text/javascript">
-  
 
-  // Load the Visualization API and the corechart package.
-  google.charts.load('current', { 'packages': ['corechart'] });
 
-  // Set a callback to run when the Google Visualization API is loaded.
-  google.charts.setOnLoadCallback(drawChart);
+    // Load the Visualization API and the corechart package.
+    google.charts.load('current', { 'packages': ['corechart'] });
 
-  // Callback that creates and populates a data table,
-  // instantiates the pie chart, passes in the data and
-  // draws it.
-  function drawChart() {
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
 
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-      ['Income', 3],
-      ['Balance', 1],
-      ['Loss', 1],
-      ['Service', 1],
-      ['Profit', 2]
-    ]);
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    function drawChart() {
 
-    // Set chart options
-    var options = {
-      'title': 'Graphical Representation',
-      'width': 1000,
-      'height': 600
-    };
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Income', 3],
+            ['Balance', 1],
+            ['Loss', 1],
+            ['Service', 1],
+            ['Profit', 2]
+        ]);
 
-    // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-  }
+        // Set chart options
+        var options = {
+            'title': 'Graphical Representation',
+            'width': 1000,
+            'height': 600
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
 </script>
 
 <header class="bg-surface-primary border-bottom pt-6">
@@ -62,9 +59,12 @@
                 </div> -->
             </div> <!-- Nav -->
             <ul class="nav nav-tabs mt-4 overflow-x border-0">
-                <li class="nav-item"> <a href="#" id="graph" onclick="graph()"  class="nav-link active">Graphical View</a> </li>
-                <li class="nav-item "> <a href="#" id="viewrequest" onclick="view()" class="nav-link  font-regular">Pending Request</a> </li>
-                <li class="nav-item"> <a href="#" id="delectrequest" onclick="del()" class="nav-link font-regular">Deleted Request</a> </li>
+                <li class="nav-item"> <a href="#" id="graph" onclick="graph()" class="nav-link active">OverAll
+                        View</a> </li>
+                <li class="nav-item "> <a href="#" id="viewrequest" onclick="view()"
+                        class="nav-link  font-regular">Pending Request</a> </li>
+                <li class="nav-item"> <a href="#" id="delectrequest" onclick="del()"
+                        class="nav-link font-regular">Deleted Request</a> </li>
             </ul>
         </div>
     </div>
@@ -72,66 +72,89 @@
 <main class="py-6 bg-surface-secondary">
     <div class="container-fluid">
         <!-- Card stats -->
-        <div class="row g-6 mb-6">
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Income</span> <span class="h3 font-bold mb-0">₹750.90</span> </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"> <i class="bi bi-credit-card"></i> </div>
+        <div id="viewgraph">
+            <div class="row g-6 mb-6">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"> <span
+                                        class="h6 font-semibold text-muted text-sm d-block mb-2">Income</span> <span
+                                        class="h3 font-bold mb-0">₹750.90</span> </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle"> <i
+                                            class="bi bi-credit-card"></i> </div>
+                                </div>
                             </div>
+                            <div class="mt-2 mb-0 text-sm"> <span
+                                    class="badge badge-pill bg-soft-success text-success me-2"> <i
+                                        class="bi bi-arrow-up me-1"></i>13% </span> <span
+                                    class="text-nowrap text-xs text-muted">Since last month</span> </div>
                         </div>
-                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>13% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total
+                                        Workers</span> <span class="h3 font-bold mb-0">215</span> </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"> <i
+                                            class="bi bi-people"></i> </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm"> <span
+                                    class="badge badge-pill bg-soft-success text-success me-2"> <i
+                                        class="bi bi-arrow-up me-1"></i>30% </span> <span
+                                    class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total
+                                        hours</span> <span class="h3 font-bold mb-0">1.400</span> </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-info text-white text-lg rounded-circle"> <i
+                                            class="bi bi-clock-history"></i> </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm"> <span
+                                    class="badge badge-pill bg-soft-danger text-danger me-2"> <i
+                                        class="bi bi-arrow-down me-1"></i>-5% </span> <span
+                                    class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card shadow border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work
+                                        Done</span> <span class="h3 font-bold mb-0">95%</span> </div>
+                                <div class="col-auto">
+                                    <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"> <i
+                                            class="bi bi-minecart-loaded"></i> </div>
+                                </div>
+                            </div>
+                            <div class="mt-2 mb-0 text-sm"> <span
+                                    class="badge badge-pill bg-soft-success text-success me-2"> <i
+                                        class="bi bi-arrow-up me-1"></i>10% </span> <span
+                                    class="text-nowrap text-xs text-muted">Since last month</span> </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total Workers</span> <span class="h3 font-bold mb-0">215</span> </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"> <i class="bi bi-people"></i> </div>
-                            </div>
-                        </div>
-                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>30% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
-                    </div>
+            <!-- graph -->
+            <div class="card shadow border-0 mb-7">
+                <div class="card-header">
+                    <h5 class="mb-0">Graphical Analysis</h5>
                 </div>
+                <div id="chart_div"></div>
             </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Total hours</span> <span class="h3 font-bold mb-0">1.400</span> </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-info text-white text-lg rounded-circle"> <i class="bi bi-clock-history"></i> </div>
-                            </div>
-                        </div>
-                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-danger text-danger me-2"> <i class="bi bi-arrow-down me-1"></i>-5% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 col-12">
-                <div class="card shadow border-0">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Work Done</span> <span class="h3 font-bold mb-0">95%</span> </div>
-                            <div class="col-auto">
-                                <div class="icon icon-shape bg-warning text-white text-lg rounded-circle"> <i class="bi bi-minecart-loaded"></i> </div>
-                            </div>
-                        </div>
-                        <div class="mt-2 mb-0 text-sm"> <span class="badge badge-pill bg-soft-success text-success me-2"> <i class="bi bi-arrow-up me-1"></i>10% </span> <span class="text-nowrap text-xs text-muted">Since last month</span> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <!-- graph -->
-         <div class="card shadow border-0 mb-7" id="viewgraph" >
-            <div class="card-header">
-                <h5 class="mb-0">Graphical Analysis</h5>
-            </div>
-            <div id="chart_div"></div>
         </div>
         <!-- end graph -->
         <!-- pen -->
@@ -153,67 +176,115 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td> <img alt="..." src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Robert Fox </a> </td>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Robert Fox </a> </td>
                             <td> Feb 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Carpenter </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span>
+                            </td>
+                            <td class="text-end"> <a href="#"
+                                    class="btn btn-sm btn-neutral">Accept</a> <button type="button"
+                                    class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Darlene Robertson </a> </td>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Darlene Robertson </a> </td>
                             <td> Apr 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Painter </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Part Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Part Time </span>
+                            </td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button"
+                                    class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button>
+                            </td>
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Theresa Webb </a> </td>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Theresa Webb </a> </td>
                             <td> Mar 20, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Cleaning Service </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Cleaning Service </a> </td>
                             <td> Pest Control </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span>
+                            </td>
+                            <td class="text-end"><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button
+                                    type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button> </td>
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Kristin Watson </a> </td>
                             <td> Feb 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
                             <td> Computer Repair </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end">
+                                <a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button"
+                                    class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button>
+                            </td>
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Cody Fisher </a> </td>
                             <td> Apr 10, 2021 </td>
                             <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
                             <td> Photography </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
+                            <td class="text-end"><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button
+                                    type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button> </td>
                         </tr>
-                     <span id="sen">
-                            <tr>
-                                <td> <img alt="..." src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
-                                <td> Feb 15, 2021 </td>
-                                <td>  <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
-                                <td> Computer Repair </td>
-                                <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span> </td>
-                                <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
-                            </tr>
-                            <tr >
-                                <td> <img alt="..." src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
-                                <td> Apr 10, 2021 </td>
-                                <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
-                                <td> Photography </td>
-                                <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span> </td>
-                                <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">View</a><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i class="bi bi-trash"></i> </button> </td>
-                            </tr>
-                        </span>
+
+                        <tr>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Kristin Watson </a> </td>
+                            <td> Feb 15, 2021 </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
+                            <td> Computer Repair </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span>
+                            </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Accept</a> <button
+                                    type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td> <img alt="..."
+                                    src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Cody Fisher </a> </td>
+                            <td> Apr 10, 2021 </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
+                            <td> Photography </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span>
+                            </td>
+                            <td class="text-end"><a href="#" class="btn btn-sm btn-neutral">Accept</a> <button
+                                    type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"> <i
+                                        class="bi bi-trash"></i> </button> </td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer border-0 py-5"> <p class="text-muted text-sm">Showing 10 items out of 250 results found</p> <button  id="plus">view</button></div>
+            <div class="card-footer border-0 py-5">
+                <p class="text-muted text-sm">Showing 10 items out of 250 results found</p> <button
+                    id="plus">view</button>
+            </div>
         </div>
         <!-- end pen -->
         <!-- del -->
@@ -235,66 +306,79 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td> <img alt="..." src="https://cdn4.vectorstock.com/i/1000x1000/12/78/businessman-flat-icon-business-and-person-vector-16051278.jpg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Robert Fox </a> </td>
+                            <td> <img alt="..."
+                                    src="https://cdn4.vectorstock.com/i/1000x1000/12/78/businessman-flat-icon-business-and-person-vector-16051278.jpg"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Robert Fox </a> </td>
                             <td> Feb 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Carpenter </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span>
+                            </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a> </td>
 
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://cdn1.vectorstock.com/i/1000x1000/77/50/man-person-thinking-icon-vector-10457750.jpg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Darlene Robertson </a> </td>
+                            <td> <img alt="..."
+                                    src="https://cdn1.vectorstock.com/i/1000x1000/77/50/man-person-thinking-icon-vector-10457750.jpg"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Darlene Robertson </a> </td>
                             <td> Apr 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Home Maintenance </a> </td>
                             <td> Painter </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Part Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-warning"></i>Part Time </span>
+                            </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a> </td>
 
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://png.pngtree.com/png-vector/20200425/ourlarge/pngtree-single-person-character-in-vector-png-image_2194492.jpg" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Theresa Webb </a> </td>
+                            <td> <img alt="..."
+                                    src="https://png.pngtree.com/png-vector/20200425/ourlarge/pngtree-single-person-character-in-vector-png-image_2194492.jpg"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Theresa Webb </a> </td>
                             <td> Mar 20, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Cleaning Service </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Cleaning Service </a> </td>
                             <td> Pest Control </td>
-                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
+                            <td> <span class="badge badge-lg badge-dot"> <i class="bg-success"></i>Full Time </span>
+                            </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a> </td>
 
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="data:image/jpeg;base64,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" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Kristin Watson </a> </td>
+                            <td> <img alt="..."
+                                    src="data:image/jpeg;base64,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"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Kristin Watson </a> </td>
                             <td> Feb 15, 2021 </td>
-                            <td>  <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
+                            <td> <a class="text-heading font-semibold" href="#"> Electronics Service </a> </td>
                             <td> Computer Repair </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-dark"></i>Not Select </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a> </td>
 
                         </tr>
                         <tr>
-                            <td> <img alt="..." src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQkLSRVBC-GOkKc42xHWUP7Qfhgn8C5_vrQw&usqp=CAU" class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold" href="#"> Cody Fisher </a> </td>
+                            <td> <img alt="..."
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQkLSRVBC-GOkKc42xHWUP7Qfhgn8C5_vrQw&usqp=CAU"
+                                    class="avatar avatar-sm rounded-circle me-2"> <a class="text-heading font-semibold"
+                                    href="#"> Cody Fisher </a> </td>
                             <td> Apr 10, 2021 </td>
                             <td> <a class="text-heading font-semibold" href="#"> Event Management </a> </td>
                             <td> Photography </td>
                             <td> <span class="badge badge-lg badge-dot"> <i class="bg-danger"></i>Casual </span> </td>
-                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a>  </td>
+                            <td class="text-end"> <a href="#" class="btn btn-sm btn-neutral">Add worker</a> </td>
 
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
 
         </div>
         <!-- end del -->
-       
+
     </div>
 </main>
 <script src="{% static 'js/dash1.js' %}"></script>
-<script>
-       $("#plus").click(function() {
-  $("#sen").toggle();
-})
 
-</script>
 
 {% endblock %}

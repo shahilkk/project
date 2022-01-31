@@ -2,8 +2,8 @@
 {% block content %}
 {% load static %}
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <style>
     .fa-map-marker,
     .fa-phone,
@@ -16,7 +16,8 @@
         /* color: rgb(105, 27, 179) */
         color: #004e92;
     }
-    .contact-info{
+
+    .contact-info {
         /* justify-content: center; */
         text-align: center;
     }
@@ -55,23 +56,26 @@
     .shadow-lg--on-hover:hover {
         box-shadow: 0 1rem 3rem rgba(132, 138, 163, 0.1) !important;
     }
-    .iframe-container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 62.5%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
-}
-.iframe-container > *{
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
+
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 62.5%;
+        /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
+    }
+
+    .iframe-container>* {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
 </style>
 <div class="container-fluid">
     <div class="row cont-img text-center mx-auto">
@@ -125,7 +129,7 @@
                                 <div class="col-sm-12 mb-3">
                                     <div class="form-group">
                                         <label class="required-field" for="message">How can we help?</label>
-                                        <textarea class="form-control" id="message" name="message" rows="4"
+                                        <textarea class="form-control" id="message" name="mess" rows="4"
                                             placeholder=""></textarea>
                                     </div>
                                 </div>
@@ -140,16 +144,16 @@
                     </div>
                     <div class="col-lg-6 col-12 p-5">
                         <div class="iframe-container">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31320.27850436185!2d75.99858919951288!3d11.110783394080345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64942a5d9acad%3A0x13efccea5b273256!2sArimbra%2C%20Kerala%20673638!5e0!3m2!1sen!2sin!4v1642919943699!5m2!1sen!2sin"
-                            width="500" height="350" style="border:0;" loading="lazy"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31320.27850436185!2d75.99858919951288!3d11.110783394080345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64942a5d9acad%3A0x13efccea5b273256!2sArimbra%2C%20Kerala%20673638!5e0!3m2!1sen!2sin!4v1642919943699!5m2!1sen!2sin"
+                                width="500" height="350" style="border:0;" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- End Contact Form Wrapper -->
-           
+
         </div>
     </div>
     <div class="row">
@@ -161,19 +165,20 @@
             </div>
             <div class="d-md-flex flex-md-row justify-content-center py-4">
                 <div class="d-md-flex flex-md-column contact px-4">
-                    <div class="d-md-flex justify-content-center iconcon py-2"> <span
-                            class="fa fa-map-marker"></span> <span class="mobile-info text-dark p-2 pb-3">Location</span> </div>
+                    <div class="d-md-flex justify-content-center iconcon py-2"> <span class="fa fa-map-marker"></span>
+                        <span class="mobile-info text-dark p-2 pb-3">Location</span>
+                    </div>
                     <div class="contact-info justify-content-center">Malappuram Arimbra</div>
                 </div>
                 <div class="d-flex flex-column contact px-4">
-                    <div class="d-md-flex justify-content-center iconcon py-2"> <span
-                            class="fa fa-phone"></span> <span class="mobile-info text-dark p-2 pb-3">Phone</span> </div>
+                    <div class="d-md-flex justify-content-center iconcon py-2"> <span class="fa fa-phone"></span> <span
+                            class="mobile-info text-dark p-2 pb-3">Phone</span> </div>
                     <div class="contact-info">989838899</div>
                 </div>
                 <div class="d-flex flex-column contact px-4">
-                    <div class="d-md-flex justify-content-center iconcon py-2"> <span
-                            class="fa fa-envelope"></span> <span
-                            class="mobile-info text-dark p-2 pb-3">Email Address</span> </div>
+                    <div class="d-md-flex justify-content-center iconcon py-2"> <span class="fa fa-envelope"></span>
+                        <span class="mobile-info text-dark p-2 pb-3">Email Address</span>
+                    </div>
                     <div class="contact-info">Ecjob@gmail.com</div>
                 </div>
             </div>
@@ -181,34 +186,10 @@
     </div>
 
 </div>
+<script src="{% static 'js/contact.js' %}"></script>
+
 <script>
-   $('#contact').validate({
-      rules: {
-        firstname1: {
-          required: true,
-          minlength: 6,
-        },
-        lastname: {
-          required: true,
-          minlength: 6,
-        }
-      },
-      messages: {
-        firstname1: {
-
-          required: "Enter your first  name",
-          minlength: "alteast 6",
-        },
-        lastname: {
-          required: "Enter your last name",
-          minlength: "alteast 6",
-        },
-      },
-      SubmitHandler: function (contact) {
-        form.submit();
-      }
-
-    })
+ 
 
 </script>
 

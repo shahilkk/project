@@ -181,6 +181,7 @@
     .error {
       color: red;
     }
+    
   </style>
 
 </head>
@@ -194,7 +195,7 @@
 
 
           <!-- Just an image -->
-          <a class="navbar-brand  fab fa-wolf-pack-battalion" style="font-size: 40px;font-weight: 400; color: white;"
+          <a class="navbar-brand  fab fa-wolf-pack-battalion " style="font-size: 40px;font-weight: 400; color: white;"
             href="#"> EC
             job</a>
           <!-- just image end -->
@@ -245,17 +246,19 @@
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
                 <form id="loginform">
                   <div class="form-row">
-                    <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
-                        class="form-control" id="#" name="username" placeholder="Enter your username"> </div>
-                    <div class="form-group col-md-12"> <label for="inputName">Your Password</label> <input
-                        type="password" class="form-control" name="password1" id="#" placeholder="Enter your password">
+                    <div class="form-group col-md-12"> <label for="inputName">Your Username</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group col-md-12"> <label for="inputName">Your Password</label>
+                      <input type="password" class="form-control" name="pass" id="pass"
+                        placeholder="Enter your password">
                     </div>
                     <div class="form-group col-md-12">
                       <div class="d-flex flex-wrap justify-content-between align-items-center">
                         <div class="custom-checkbox d-block"> <label class="custom-control custom-checkbox checkbox-lg">
                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                             <div class="custom-control-label" for="customCheck1">Remember Password</div>
-                          </label> </div> <a href="#" target="_blank">Forgot Password?</a>
+                          </label> </div> <a href="#" target="">Forgot Password?</a>
                       </div>
                     </div>
                   </div>
@@ -271,28 +274,32 @@
                   </ul>
                 </div>
               </div>
-              <div class="tab-pane fade reg" id="register" role="tabpanel" aria-labelledby="register-tab">
+              <div class="tab-pane fade " id="register" role="tabpanel" aria-labelledby="register-tab">
                 <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Register</h4>
                 <form id="reg">
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Name</label> <input type="text"
-                        class="form-control" id="#" name="name" placeholder="Enter your name"> </div>
+                        class="form-control" id="name" name="regname" placeholder="Enter your name"> </div>
                     <div class="form-group col-md-12"> <label for="inputName">Your Username</label> <input type="text"
-                        class="form-control" id="#" placeholder="Enter your username"> </div>
+                        class="form-control" name="reguser" id="#" placeholder="Enter your username"> </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Phone Number</label> <input
-                        type="tel" class="form-control" id="#" placeholder="Enter your Phone Number"> </div>
+                        type="tel" class="form-control" id="#" name="regphone" placeholder="Enter your Phone Number">
+                    </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Email Address</label> <input
-                        type="email" class="form-control" id="#" placeholder="Enter your email address"> </div>
+                        type="email" class="form-control" id="#" name="regemail" placeholder="Enter your email address">
+                    </div>
                     <div class="form-group col-md-12"> <label for="inputName">Your Password</label> <input
-                        type="password" class="form-control" id="#" placeholder="Enter your password"> </div>
+                        type="password" class="form-control" id="password" name="regpass" placeholder="Enter your password">
+                    </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-12"> <label for="inputName">Your Confirm Password</label> <input
-                        type="password" class="form-control" id="#" placeholder="Enter your confirm password"> </div>
+                        type="password" class="form-control" id="#" name="regconpass"
+                        placeholder="Enter your confirm password"> </div>
 
                   </div>
                   <div class="form-group form-row">
@@ -464,82 +471,77 @@
 
   <!-- end footer -->
 
+  <script src="{% static 'js/master.js' %}"></script>
 
-  <!-- <script>
-    $(window).scroll(function(){
-     if($(document).scrollTop() < 1){
-      $('nav').removeClass('fixed')
-      $('nav').removeClass('active')
 
-     }
-     else if($(document).scrollTop() > 100){
-      $('nav').removeClass('fixed')
-      $('nav').addClass('active')
-      }
-      else{
-        $('nav').addClass('fixed')
-
-      }
-    })
-  </script>  -->
 
 
   <script>
-    $('#loginform').validate({
-      rules: {
-        username: {
-          required: true,
-          minlength: 6,
-        },
-        password1: {
-          required: true,
-          minlength: 6,
-        }
+  $('#reg').validate({
+    rules: {
+      regname: {
+        required: true,
+        minlength: 6,
       },
-      messages: {
-        username: {
+      reguser: {
+        required: true,
+        minlength: 6,
 
-          required: "Enter your user  name",
-          minlength: "alteast 6",
-        },
-        password1: {
-          required: "Enter your password",
-          minlength: "alteast 6",
-        },
       },
-      SubmitHandler: function (loginform) {
-        form.submit();
+      regphone: {
+        required: true,
+        number: true,
+        maxlength: 10,
+        minlength: 10,
+      },
+      regemail: {
+        required: true,
+        email: true,
+
+      },
+      regpass:{
+        required:true,
+         minlength:5,
+      },
+      regconpass:{
+          required:true,
+          equalTo:"#password",
       }
-
-    })
-
-
-    // -----------------------------------
-    $('#reg').validate({
-      rules: {
-        name: {
-          required: true,
-          minlength: 6,
-        },
-        usrname: {
-          required: true,
-          minlength: 6,
-        }
+    },
+    messages: {
+      regname: {
+        required: "Enter your user  name",
+        minlength: "alteast 6",
       },
-      messages: {
-        name: {
-          required: "Enter your user  name",
-          minlength: "alteast 6",
-        },
-        usrname: {
-          required: "Enter your password",
-          minlength: "alteast 6",
-        },
+      reguser: {
+        required: "Enter your  username",
+        minlength: "alteast 6",
       },
-      SubmitHandler: function (reg) {
-        form.submit();
-      }
-    })
+      regphone: {
+        required: 'enter phone number',
+        number: 'valid phone number',
+        maxlength: 'no more than 10  ',
+        minlength: 'no less than 10',
+      },
+      regemail: {
+        required: "enter email id",
+        email: "enter a valid email id",
+
+      },
+      regpass:{
+        required: "Enter your  password",
+        minlength: "alteast 6",
+      },
+      regconpass:{
+         required:"please fill this field",
+         equalTo:"password must be same"
+       }
+
+    },
+    SubmitHandler: function (reg) {
+      form.submit();
+    }
+  })
 
   </script>
 
