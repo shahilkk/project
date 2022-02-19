@@ -12,4 +12,8 @@ def fnwork_dash(request):
 def fnorder(request):
     return render(request,'order.html')          
 def fnreview(request):
-    return render(request,'review.html')           
+    return render(request,'review.html')       
+def fnquick(request):
+    return render(request,'quick.html')  
+def fnedit(request):
+    return render(request,'edit.html')             

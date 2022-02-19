@@ -6,7 +6,8 @@ $('#allcategories').click(function(){
     $('#viewevent').hide();
     $('#viewauto').hide();
     $('#viewhealth').hide();
-
+    $('#viewother').hide();
+    
   });
 
   $('#elect').click(function(){
@@ -17,6 +18,8 @@ $('#allcategories').click(function(){
     $('#viewevent').hide();
     $('#viewauto').hide();
     $('#viewhealth').hide();
+    $('#viewother').hide();
+
 
 
   });
@@ -28,6 +31,8 @@ $('#allcategories').click(function(){
       $('#viewevent').hide();
      $('#viewauto').hide();
      $('#viewhealth').hide();
+     $('#viewother').hide();
+
 
 
   });
@@ -39,6 +44,8 @@ $('#allcategories').click(function(){
     $('#viewevent').hide();
     $('#viewauto').hide();
     $('#viewhealth').hide();
+    $('#viewother').hide();
+
 
   });
   $('#eventoccasion').click(function(){
@@ -49,6 +56,8 @@ $('#allcategories').click(function(){
     $('#viewhome').hide();
     $('#viewauto').hide();
     $('#viewhealth').hide();
+    $('#viewother').hide();
+
 
   });
   $('#automobile').click(function(){
@@ -59,6 +68,8 @@ $('#allcategories').click(function(){
     $('#allcat').hide();
     $('#viewhome').hide();
     $('#viewhealth').hide();
+    $('#viewother').hide();
+
 
   });
   $('#healthpersonal').click(function(){
@@ -69,6 +80,18 @@ $('#allcategories').click(function(){
     $('#viewele').hide();
     $('#allcat').hide();
     $('#viewhome').hide();
+    $('#viewother').hide();
+
+  });
+  $('#otherservice').click(function(){
+    $('#viewother').show();
+    $('#viewauto').hide();
+    $('#viewevent').hide();
+    $('#viewclean').hide();
+    $('#viewele').hide();
+    $('#allcat').hide();
+    $('#viewhome').hide();
+    $('#viewhealth').hide();
 
   });
    

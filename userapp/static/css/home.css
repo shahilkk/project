@@ -141,7 +141,9 @@
   
 
 }
-.about-box  .vediopopup{
+/* vedio pop up */
+
+/* .about-box  .vediopopup{
     position: relative;
 }
 .sonar-wrapper{
@@ -192,7 +194,7 @@
         transform: scale(3);
         opacity: 0;
     }
-}
+} */
 .btn-color-background{
     -moz-user-select: none;
     background-image: -webkit-linear-gradient(145deg,#faa61f 0%,#faa61f 0%,#ed1847 100%);

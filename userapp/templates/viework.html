@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="{% static 'css/view.css' %}">
 
 
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
 <!--  -->
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -19,6 +19,14 @@
 
 
 <style>
+    body{
+              padding-top: 100px;
+
+    }
+    .navbar{
+      background-image: linear-gradient(to left, #000428, #004e92);
+
+    }
   .error {
     color: red;
   }
@@ -55,14 +63,13 @@
     border-radius: 20px;
 
   }
-  #quickform button{
+
+  #quickform button {
     background-color: #004e92;
     height: 40px;
     color: white;
     border-radius: 20px;
   }
-  
-  
 </style>
 
 <div class="container ">
@@ -118,7 +125,7 @@
           </div>
 
         </div>
-        
+
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Date</label>
@@ -129,10 +136,10 @@
             <label for="">Time</label>
             <input type="time" class="form-control" id="">
           </div>
-         
+
 
         </div>
-        
+
         <div class="form-group">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -141,7 +148,7 @@
             </label>
           </div>
         </div>
-        <button type="submit" >Book Now</button>
+        <button type="submit">Book Now</button>
       </form>
 
     </div>
@@ -299,7 +306,7 @@
         maxlength: 6,
         minlength: 6,
       },
-     
+
     },
 
     messages: {

@@ -126,11 +126,40 @@
   .trending {
     font-weight: 900;
   }
-</style>
+
+  @media (max-width:576px) {
+    .package {
+      font-size: 30px;
+    }
+
+  }
+
+  @media (max-width:1200px) {
+    .pricing li {
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width:1050px) {
+    .pricing li {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width:576px) {
+    .pricing li {
+      font-size: 15px;
+    }
+  }
+
+
+ 
+</style> 
 
 <!-- slider -->
 
 <!-- <div class="container"> -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-arrow-up"></i></button>
 <div class="row  " style="margin: 0;">
   <div class="col-lg-12">
 
@@ -139,7 +168,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="{% static 'img/img1e1.jpg' %}" class="img-fluid" alt="...">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block cap">
             <h5 class="animated slideInDown" style="animation-delay: 1s;">Start Working with Us</h5>
             <p class="lead animated fadeInUp" style="animation-delay: 2s;">"We are free and ready to start whenever
               you need me. Regarding the hours, We are flexible and willing to do work whenever you need ud the Team
@@ -180,18 +209,14 @@
           </div>
           <div class="about-item">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sed cum repellat omnis tempore atque
-              corporis quibusdam porro doloribus accusantium tenetur ipsam, qui quis odio suscipit nam id, Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Deserunt numquam eveniet, molestias explicabo at beatae
-              illo neque nulla vel minima ipsam inventore hic sit soluta architecto quam amet accusantium culpa!
-              cumque vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam totam laudantium quas
-              exercitationem asperiores, modi dicta earum? Incidunt aut exercitationem eos? Rerum modi reprehenderit
-              tempora fuga accusamus odio sint sapiente.
+              Ec_job is your one-stop solution to sort all your home needs ranging from construction to maintenance,
+              quickly, professionally and conveniently. We simplify your everyday living with a variety of at-home
+              services, delivered by verified & qualified professionals only.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum labore, esse saepe voluptates fuga
-              dolor eveniet explicabo soluta nihil tenetur sapiente et reiciendis quo totam? Quam corrupti explicabo
-              deserunt.
+              You get to hire the professional of your choice to serve you. <br>We understand your requirements and
+              cater to them just the way you like it. <br>Background verified, well trained and experienced
+              professionals at your service
             </p>
             <div class="hgt-20">
               <!-- <div class="home-button">
@@ -205,14 +230,14 @@
             <div class="box-overlay"></div>
             <a href="#!" class="vediopopup">
               <img src="{% static 'img/img2.jpg' %}" alt="">
-              <span class="sonar-wrapper">
+              <!-- <span class="sonar-wrapper">
                 <span class="sonar-emitter">
                   <i class="fa fa-play"></i>
                   <div class="sonar-wave"></div>
 
                 </span>
 
-              </span>
+              </span> -->
             </a>
 
           </div>
@@ -348,7 +373,7 @@
 <div class="row row1" style="margin: 0;">
   <div class="col-lg-12 text-center">
     <div class="jumbotron" id="special">
-      <h1 class="display-4"> Packages</h1>
+      <h1 class="package"> Packages</h1>
       <p class="lead">Customise your package to build your perfect home!
       </p>
       <hr class="my-4">
@@ -458,7 +483,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" >
+      <div class="modal-body">
         <div class="table-responsive">
           <table class="table" border="3">
             <thead>
@@ -589,16 +614,16 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" >
+      <div class="modal-body">
         <div class="table-responsive">
-          <table class="table"  border="3">
+          <table class="table" border="3">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Items</th>
                 <th scope="col">Features</th>
-    
-    
+
+
               </tr>
             </thead>
             <tbody>
@@ -607,7 +632,7 @@
                 <td>Car Porch Area</td>
                 <td>Flooring: Paver tiles up to Rs 40/sqft <br> Electrical and plumbing points in this area/landscaping
                   area shall be provided as per Architects plan during stages of construction</td>
-    
+
               </tr>
               <tr>
                 <th scope="row">2</th>
@@ -732,147 +757,148 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" >
+      <div class="modal-body">
         <div class="table-responsive">
-            <table class="table" border="3">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Items</th>
-                        <th scope="col">Features</th>
-        
-        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Car Porch Area</td>
-                        <td>Flooring: Paver tiles up to Rs 50/sqft <br> Electrical and plumbing points in this area/landscaping
-                            area shall be provided as per Architects plan during stages of construction</td>
-        
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Entrance Area</td>
-                        <td>Polished granite flooring (steel grey or black) up to Rs 140/ sqft </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Living room/Family room </td>
-                        <td>Italian marble flooring up to Rs 450/sqft<br> Designer gypsum false ceiling excluding curves and
-                            wooden finish <br> Accent wall -texture paint or wallpaper (Size: 12’ x 10’)<br> Designer TV unit -
-                            18mm commercial ply + laminate / veneer finish up to Rs50/sqft with Hettich hardware(Size:7’x6’)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4 </th>
-                        <td>Verandah/Foyer </td>
-                        <td>Granite flooring up to Rs 140/sqft <br> Accent wall -texture paint or wallpaper (Size: 8’x10’) <br>
-                            Shoe rack - 18mm commercial ply + 1mm laminate finish (internal white laminate and external with
-                            laminate and louvers on each shutter)up to Rs 50/sqft with Hettich hardware/fittings.(Size : 4’ x
-                            2’)
-                            <br> Teak Wood door with teak wood frames with carving <br>Main door towel bolts, handles and lock
-                            to
-                            have bronze <br> Teak wood shutter windows with teak wood frames
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 5</th>
-                        <td> Dining & Courtyard area </td>
-                        <td>Italian marble flooring up to Rs 200/sqft <br>Crockery unit with 18mm commercial ply + veneer
-                            Polycoat finish(Size : 5’ x 2’ - 6’’ or 5’ x 4’)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6 </th>
-                        <td>Kitchen </td>
-                        <td>Modular kitchen with 18mm water proof ply + 18mm ply shutters with acrylic at Rs.150 /sqft with
-                            Hettich hardware and fittings Accessories: 1 cutlery, 2 Tandem boxes, 1 bottle pullout and 2 plain
-                            baskets (Size: up to 70sqft). <br>20mm thick Black color granite top up to Rs 150/sqft with 40mm
-                            nosing <br>Copper gas piping <br>SS double dipper sink<br>4" x 2" vitrified marbonite finished tiles
-                            up to Rs 190/sqft <br> Breakfast counter - black leather finish granite<br> Ceramic wall tiles above
-                            kitchen slab up to Rs 70/sqft</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7 </th>
-                        <td>Utility </td>
-                        <td> 10mm thick Black granite top<br> Double dipper SS sink<br> 2’x2’ vitrified marbonite finished tiles
-                            up to Rs 150/sqft and ceramic tiles wall cladding where ever required up to Rs 80/ sq.ft</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 8</th>
-                        <td>Bedroom & washroom </td>
-                        <td> Laminated Wooden flooring up to Rs 160/sqft<br>Wardrobe - 18mm commercial ply + polycoat/lacquered
-                            glass/veneer finishes with Hettich hardware & fittings soft closing (size: 8’x7’ and 8’x2’ loft)
-                            <br> Accent wall - texture paint or wallpaper (Size: 10’ x 10’)<br> Designer gypsum false ceiling
-                            excluding curves and wooden finish <br>
-                            Toilet – Ceramic wall tiles up to Rs 100/sqft for floor and wall tiles. 2 vertical strips of
-                            highlighter tiles of length 2’-0” wide <br>Bath tub up to Rs 15000/- <br>25,000/- allowance for
-                            bathroom fixtures </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9 </th>
-                        <td>Stair case </td>
-                        <td> Semi polished granite flooring up to Rs 200/sqft <br>Railing of Sal wood up to Rs 1950/cft and SS
-                            railing with glass (if teak wood Rs 1850/cft extra) </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10 </th>
-                        <td>Balcony </td>
-                        <td>Ceramic tiles for the flooring up to Rs 70/sqft<br> SS Railing with glass</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11 </th>
-                        <td>Terrace </td>
-                        <td>Paver tiles for the flooring up to Rs 80/sqft<br>2 Overhead tanks –Sintex tank each of 1000ltrs, MS
-                            stairs for the tank</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 12</th>
-                        <td>Painting </td>
-                        <td>Plastic emulsion painting (Internal) – Asian<br> Exterior emulsion painting – Asian <br>Texture
-                            paint - Asian</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">13 </th>
-                        <td>Electrical </td>
-                        <td>All conduits and wiring <br> Wires - Finolex. Switches – Anchor/Legrand <br> Switches and
-                            switchboard<br> Connections, points provided for UPS/AC points wherever required.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">14 </th>
-                        <td>Sump Work </td>
-                        <td>Sump with capacity up to 20,000 liters <br> Sump to be constructed with brick masonry </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">15 </th>
-                        <td>Basement </td>
-                        <td>Basement shall be charged at @ Rs 900/sqft additional for construction and finishing (excluding
-                            retaining wall)<br> Polished Granite flooring (steel grey or black) for dogleg stairs as per
-                            Architect’s design <br>SS railing as per the design <br> 2" x 2" vitrified marbonite finished tiles
-                            up
-                            to Rs 150/sqft </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">16 </th>
-                        <td>Family Living Room </td>
-                        <td>Wooden flooring up to Rs 250/sqft<br> Accent wall - texture paint (Size: 8’x10’ </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">17 </th>
-                        <td>Court yard area </td>
-                        <td>Wooden flooring up to Rs 160/sqft <br> The area left out after the FF family living <br>Railing of
-                            Sal wood up toRs 1950/cft and SS railing with glass (if teak wood Rs 1850/cft Extra)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">18 </th>
-                        <td>Study Room </td>
-                        <td>Laminated Wooden/Vitrified flooring up to Rs 160/sqft </td>
-                    </tr>
-                </tbody>
-            </table>
+          <table class="table" border="3">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Items</th>
+                <th scope="col">Features</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Car Porch Area</td>
+                <td>Flooring: Paver tiles up to Rs 50/sqft <br> Electrical and plumbing points in this area/landscaping
+                  area shall be provided as per Architects plan during stages of construction</td>
+
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Entrance Area</td>
+                <td>Polished granite flooring (steel grey or black) up to Rs 140/ sqft </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Living room/Family room </td>
+                <td>Italian marble flooring up to Rs 450/sqft<br> Designer gypsum false ceiling excluding curves and
+                  wooden finish <br> Accent wall -texture paint or wallpaper (Size: 12’ x 10’)<br> Designer TV unit -
+                  18mm commercial ply + laminate / veneer finish up to Rs50/sqft with Hettich hardware(Size:7’x6’)
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4 </th>
+                <td>Verandah/Foyer </td>
+                <td>Granite flooring up to Rs 140/sqft <br> Accent wall -texture paint or wallpaper (Size: 8’x10’) <br>
+                  Shoe rack - 18mm commercial ply + 1mm laminate finish (internal white laminate and external with
+                  laminate and louvers on each shutter)up to Rs 50/sqft with Hettich hardware/fittings.(Size : 4’ x
+                  2’)
+                  <br> Teak Wood door with teak wood frames with carving <br>Main door towel bolts, handles and lock
+                  to
+                  have bronze <br> Teak wood shutter windows with teak wood frames
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"> 5</th>
+                <td> Dining & Courtyard area </td>
+                <td>Italian marble flooring up to Rs 200/sqft <br>Crockery unit with 18mm commercial ply + veneer
+                  Polycoat finish(Size : 5’ x 2’ - 6’’ or 5’ x 4’)</td>
+              </tr>
+              <tr>
+                <th scope="row">6 </th>
+                <td>Kitchen </td>
+                <td>Modular kitchen with 18mm water proof ply + 18mm ply shutters with acrylic at Rs.150 /sqft with
+                  Hettich hardware and fittings Accessories: 1 cutlery, 2 Tandem boxes, 1 bottle pullout and 2 plain
+                  baskets (Size: up to 70sqft). <br>20mm thick Black color granite top up to Rs 150/sqft with 40mm
+                  nosing <br>Copper gas piping <br>SS double dipper sink<br>4" x 2" vitrified marbonite finished tiles
+                  up to Rs 190/sqft <br> Breakfast counter - black leather finish granite<br> Ceramic wall tiles above
+                  kitchen slab up to Rs 70/sqft</td>
+              </tr>
+              <tr>
+                <th scope="row">7 </th>
+                <td>Utility </td>
+                <td> 10mm thick Black granite top<br> Double dipper SS sink<br> 2’x2’ vitrified marbonite finished tiles
+                  up to Rs 150/sqft and ceramic tiles wall cladding where ever required up to Rs 80/ sq.ft</td>
+              </tr>
+              <tr>
+                <th scope="row"> 8</th>
+                <td>Bedroom & washroom </td>
+                <td> Laminated Wooden flooring up to Rs 160/sqft<br>Wardrobe - 18mm commercial ply + polycoat/lacquered
+                  glass/veneer finishes with Hettich hardware & fittings soft closing (size: 8’x7’ and 8’x2’ loft)
+                  <br> Accent wall - texture paint or wallpaper (Size: 10’ x 10’)<br> Designer gypsum false ceiling
+                  excluding curves and wooden finish <br>
+                  Toilet – Ceramic wall tiles up to Rs 100/sqft for floor and wall tiles. 2 vertical strips of
+                  highlighter tiles of length 2’-0” wide <br>Bath tub up to Rs 15000/- <br>25,000/- allowance for
+                  bathroom fixtures
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">9 </th>
+                <td>Stair case </td>
+                <td> Semi polished granite flooring up to Rs 200/sqft <br>Railing of Sal wood up to Rs 1950/cft and SS
+                  railing with glass (if teak wood Rs 1850/cft extra) </td>
+              </tr>
+              <tr>
+                <th scope="row">10 </th>
+                <td>Balcony </td>
+                <td>Ceramic tiles for the flooring up to Rs 70/sqft<br> SS Railing with glass</td>
+              </tr>
+              <tr>
+                <th scope="row">11 </th>
+                <td>Terrace </td>
+                <td>Paver tiles for the flooring up to Rs 80/sqft<br>2 Overhead tanks –Sintex tank each of 1000ltrs, MS
+                  stairs for the tank</td>
+              </tr>
+              <tr>
+                <th scope="row"> 12</th>
+                <td>Painting </td>
+                <td>Plastic emulsion painting (Internal) – Asian<br> Exterior emulsion painting – Asian <br>Texture
+                  paint - Asian</td>
+              </tr>
+              <tr>
+                <th scope="row">13 </th>
+                <td>Electrical </td>
+                <td>All conduits and wiring <br> Wires - Finolex. Switches – Anchor/Legrand <br> Switches and
+                  switchboard<br> Connections, points provided for UPS/AC points wherever required.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">14 </th>
+                <td>Sump Work </td>
+                <td>Sump with capacity up to 20,000 liters <br> Sump to be constructed with brick masonry </td>
+              </tr>
+              <tr>
+                <th scope="row">15 </th>
+                <td>Basement </td>
+                <td>Basement shall be charged at @ Rs 900/sqft additional for construction and finishing (excluding
+                  retaining wall)<br> Polished Granite flooring (steel grey or black) for dogleg stairs as per
+                  Architect’s design <br>SS railing as per the design <br> 2" x 2" vitrified marbonite finished tiles
+                  up
+                  to Rs 150/sqft </td>
+              </tr>
+              <tr>
+                <th scope="row">16 </th>
+                <td>Family Living Room </td>
+                <td>Wooden flooring up to Rs 250/sqft<br> Accent wall - texture paint (Size: 8’x10’ </td>
+              </tr>
+              <tr>
+                <th scope="row">17 </th>
+                <td>Court yard area </td>
+                <td>Wooden flooring up to Rs 160/sqft <br> The area left out after the FF family living <br>Railing of
+                  Sal wood up toRs 1950/cft and SS railing with glass (if teak wood Rs 1850/cft Extra)
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">18 </th>
+                <td>Study Room </td>
+                <td>Laminated Wooden/Vitrified flooring up to Rs 160/sqft </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
@@ -898,160 +924,160 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" >
+      <div class="modal-body">
         <div class="table-responsive">
-            <table class="table" border="3">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Items</th>
-                        <th scope="col">Features</th>
-        
-        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Car Porch Area</td>
-                        <td>Flooring: Paver tiles up to Rs 60/sqft <br> Electrical and plumbing points in this area/landscaping
-                            area shall be provided as per Architects plan during stages of construction</td>
-        
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Entrance Area</td>
-                        <td>Polished granite flooring (steel grey or black) up to Rs 160/ sqft </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Living room/Family room </td>
-                        <td>Italian marble flooring up to Rs 600/sqft<br> Designer gypsum false ceiling with wooden rafters on
-                            the ceiling (plywood + teak veneer finish)<br> Accent wall -texture paint or wallpaper (Size: 12’ x
-                            10’)<br> Designer TV unit -
-                            18mm commercial ply + laminate / veneer finish up to Rs50/sqft with Hettich hardware(Size:8’x6’)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">4 </th>
-                        <td>Verandah/Foyer </td>
-                        <td>Granite flooring up to Rs 300/sqft <br> Accent wall -texture paint or wallpaper (Size: 8’x10’) <br>
-                            Shoe rack - 18mm commercial ply + 1mm laminate finish (internal white laminate and external with
-                            laminate and louvers on each shutter)up to Rs 50/sqft with Hettich hardware/fittings.(Size : 4’ x
-                            2’)
-                            <br> Teak Wood door with teak wood frames with carving <br>Main door towel bolts, handles and lock
-                            to
-                            have bronze <br> Teak wood shutter windows with teak wood frames
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 5</th>
-                        <td> Dining & Courtyard area </td>
-                        <td>Italian marble flooring up to Rs 600/sqft <br>Crockery unit with 18mm commercial ply + veneer
-                            Polycoat finish(Size : 5’ x 2’ - 6’’ or 5’ x 4’)</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">6 </th>
-                        <td>Kitchen </td>
-                        <td>Modular kitchen with 18mm water proof ply + 18mm ply shutters with acrylic at Rs.150 /sqft with
-                            Hettich hardware and fittings Accessories: 1 cutlery, 2 Tandem boxes, 1 bottle pullout , 2 plain
-                            baskets and 1 corner unit.(Size: up to 80sqft). <br>20mm thick Black color granite top up to Rs
-                            160/sqft with 40mm nosing <br>Copper gas piping <br>SS double dipper sink<br>4" x 2" vitrified
-                            marbonite finished tiles up to Rs 220/sqft <br> Breakfast counter - black leather finish granite<br>
-                            Ceramic wall tiles above kitchen slab up to Rs 80/sqft</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7 </th>
-                        <td>Utility </td>
-                        <td> 10mm thick Black granite top<br> Double dipper SS sink<br> 2’x2’ vitrified marbonite finished tiles
-                            up to Rs 150/sqft and ceramic tiles wall cladding where ever required up to Rs 80/ sq.ft</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 8</th>
-                        <td>Bedroom & washroom </td>
-                        <td> Laminated Wooden flooring up to Rs 190/sqft<br>Wardrobe - 18mm commercial ply + polycoat/lacquered
-                            glass/veneer finishes with Hettich brand sliding hardware &fittings. (Size: 9’ x 7’ and 9’x2’)
-                            <br> Accent wall - texture paint or wallpaper (Size: 10’ x 10’)<br> Designer gypsum false ceiling
-                            <br>Toilet – Ceramic wall tiles up to Rs 100/sqft for floor and wall tiles. 2 vertical strips of
-                            highlighter tiles of length 2’-0” wide <br>Bath tub up to Rs 15000/- <br>30,000/- allowance for
-                            bathroom fixtures
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">9 </th>
-                        <td>Stair case </td>
-                        <td> Semi polished granite flooring up to Rs 300/sqft <br>Railing of Teakwood and SS 304 railing with
-                            glass </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">10 </th>
-                        <td>Balcony </td>
-                        <td>Anti skid ceramic tiles for the flooring up to Rs 120/sqft<br> Railing SS with glass</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">11 </th>
-                        <td>Terrace </td>
-                        <td>Paver tiles for the flooring up to Rs 9 0/sqft<br>2 Overhead tanks –Sintex tank each of 1000ltrs, MS
-                            stairs for the tank</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"> 12</th>
-                        <td>Painting </td>
-                        <td>Royal emulsion painting (Internal) – Asian<br> Exterior emulsion painting – Asian <br>Texture
-                            paint - Asian</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">13 </th>
-                        <td>Electrical </td>
-                        <td>All conduits and wiring <br> Wires - Finolex. Switches – Anchor/Legrand <br> Switches and
-                            switchboard<br> Connections, points provided for UPS/AC points wherever required.
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">14 </th>
-                        <td>Sump Work </td>
-                        <td>Sump with capacity up to 20,000 liters <br> Sump to be constructed with brick masonry </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">15 </th>
-                        <td>Basement </td>
-                        <td>Basement shall be charged at @ Rs 900/sqft additional for construction and finishing (excluding
-                            retaining wall)<br> Polished Granite flooring (steel grey or black) for dogleg stairs as per
-                            Architect’s design <br>SS railing as per the design <br> 2" x 2" vitrified marbonite finished tiles
-                            up
-                            to Rs 150/sqft </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">16 </th>
-                        <td>Family Living Room </td>
-                        <td>Italian marble flooring up to Rs 300/sqft<br> Accent wall - texture paint (Size: 12’x10’) </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">17 </th>
-                        <td>Court yard area </td>
-                        <td>Italian marble flooring up to Rs 650/sqft <br> The area left out after the FF family living
-                            <br>Railing of Teak wood and SS 304 railing with glass
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">18 </th>
-                        <td>Study Room </td>
-                        <td>Laminated Wooden/Vitrified flooring up to Rs 190/sqft </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">19 </th>
-                        <td>Bed Room 1 and toilet</td>
-                        <td>Laminated Wooden/Vitrified flooring up to Rs 190/sqft <br>Wardrobe - 18mm commercial ply +
-                            laminate/veneer /polycoat/lacquered glass with Hettich brand sliding hardware & fittings soft
-                            closing (size: 8’x7’ and 8’x 2’ loft) <br>Accent wall - (texture paint or wallpaper) (Size : 10’ x
-                            10’) <br>Toilet – Ceramic wall tiles up to Rs 120/sqft for floor and wall tiles. 2 vertical strips
-                            of highlighter tiles of length 2’-0”wide <br>Shower glass cubicle <br>Rs 30,000/- allowance for
-                            bathroom fixtures
-        
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+          <table class="table" border="3">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Items</th>
+                <th scope="col">Features</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Car Porch Area</td>
+                <td>Flooring: Paver tiles up to Rs 60/sqft <br> Electrical and plumbing points in this area/landscaping
+                  area shall be provided as per Architects plan during stages of construction</td>
+
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Entrance Area</td>
+                <td>Polished granite flooring (steel grey or black) up to Rs 160/ sqft </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Living room/Family room </td>
+                <td>Italian marble flooring up to Rs 600/sqft<br> Designer gypsum false ceiling with wooden rafters on
+                  the ceiling (plywood + teak veneer finish)<br> Accent wall -texture paint or wallpaper (Size: 12’ x
+                  10’)<br> Designer TV unit -
+                  18mm commercial ply + laminate / veneer finish up to Rs50/sqft with Hettich hardware(Size:8’x6’)
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4 </th>
+                <td>Verandah/Foyer </td>
+                <td>Granite flooring up to Rs 300/sqft <br> Accent wall -texture paint or wallpaper (Size: 8’x10’) <br>
+                  Shoe rack - 18mm commercial ply + 1mm laminate finish (internal white laminate and external with
+                  laminate and louvers on each shutter)up to Rs 50/sqft with Hettich hardware/fittings.(Size : 4’ x
+                  2’)
+                  <br> Teak Wood door with teak wood frames with carving <br>Main door towel bolts, handles and lock
+                  to
+                  have bronze <br> Teak wood shutter windows with teak wood frames
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"> 5</th>
+                <td> Dining & Courtyard area </td>
+                <td>Italian marble flooring up to Rs 600/sqft <br>Crockery unit with 18mm commercial ply + veneer
+                  Polycoat finish(Size : 5’ x 2’ - 6’’ or 5’ x 4’)</td>
+              </tr>
+              <tr>
+                <th scope="row">6 </th>
+                <td>Kitchen </td>
+                <td>Modular kitchen with 18mm water proof ply + 18mm ply shutters with acrylic at Rs.150 /sqft with
+                  Hettich hardware and fittings Accessories: 1 cutlery, 2 Tandem boxes, 1 bottle pullout , 2 plain
+                  baskets and 1 corner unit.(Size: up to 80sqft). <br>20mm thick Black color granite top up to Rs
+                  160/sqft with 40mm nosing <br>Copper gas piping <br>SS double dipper sink<br>4" x 2" vitrified
+                  marbonite finished tiles up to Rs 220/sqft <br> Breakfast counter - black leather finish granite<br>
+                  Ceramic wall tiles above kitchen slab up to Rs 80/sqft</td>
+              </tr>
+              <tr>
+                <th scope="row">7 </th>
+                <td>Utility </td>
+                <td> 10mm thick Black granite top<br> Double dipper SS sink<br> 2’x2’ vitrified marbonite finished tiles
+                  up to Rs 150/sqft and ceramic tiles wall cladding where ever required up to Rs 80/ sq.ft</td>
+              </tr>
+              <tr>
+                <th scope="row"> 8</th>
+                <td>Bedroom & washroom </td>
+                <td> Laminated Wooden flooring up to Rs 190/sqft<br>Wardrobe - 18mm commercial ply + polycoat/lacquered
+                  glass/veneer finishes with Hettich brand sliding hardware &fittings. (Size: 9’ x 7’ and 9’x2’)
+                  <br> Accent wall - texture paint or wallpaper (Size: 10’ x 10’)<br> Designer gypsum false ceiling
+                  <br>Toilet – Ceramic wall tiles up to Rs 100/sqft for floor and wall tiles. 2 vertical strips of
+                  highlighter tiles of length 2’-0” wide <br>Bath tub up to Rs 15000/- <br>30,000/- allowance for
+                  bathroom fixtures
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">9 </th>
+                <td>Stair case </td>
+                <td> Semi polished granite flooring up to Rs 300/sqft <br>Railing of Teakwood and SS 304 railing with
+                  glass </td>
+              </tr>
+              <tr>
+                <th scope="row">10 </th>
+                <td>Balcony </td>
+                <td>Anti skid ceramic tiles for the flooring up to Rs 120/sqft<br> Railing SS with glass</td>
+              </tr>
+              <tr>
+                <th scope="row">11 </th>
+                <td>Terrace </td>
+                <td>Paver tiles for the flooring up to Rs 9 0/sqft<br>2 Overhead tanks –Sintex tank each of 1000ltrs, MS
+                  stairs for the tank</td>
+              </tr>
+              <tr>
+                <th scope="row"> 12</th>
+                <td>Painting </td>
+                <td>Royal emulsion painting (Internal) – Asian<br> Exterior emulsion painting – Asian <br>Texture
+                  paint - Asian</td>
+              </tr>
+              <tr>
+                <th scope="row">13 </th>
+                <td>Electrical </td>
+                <td>All conduits and wiring <br> Wires - Finolex. Switches – Anchor/Legrand <br> Switches and
+                  switchboard<br> Connections, points provided for UPS/AC points wherever required.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">14 </th>
+                <td>Sump Work </td>
+                <td>Sump with capacity up to 20,000 liters <br> Sump to be constructed with brick masonry </td>
+              </tr>
+              <tr>
+                <th scope="row">15 </th>
+                <td>Basement </td>
+                <td>Basement shall be charged at @ Rs 900/sqft additional for construction and finishing (excluding
+                  retaining wall)<br> Polished Granite flooring (steel grey or black) for dogleg stairs as per
+                  Architect’s design <br>SS railing as per the design <br> 2" x 2" vitrified marbonite finished tiles
+                  up
+                  to Rs 150/sqft </td>
+              </tr>
+              <tr>
+                <th scope="row">16 </th>
+                <td>Family Living Room </td>
+                <td>Italian marble flooring up to Rs 300/sqft<br> Accent wall - texture paint (Size: 12’x10’) </td>
+              </tr>
+              <tr>
+                <th scope="row">17 </th>
+                <td>Court yard area </td>
+                <td>Italian marble flooring up to Rs 650/sqft <br> The area left out after the FF family living
+                  <br>Railing of Teak wood and SS 304 railing with glass
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">18 </th>
+                <td>Study Room </td>
+                <td>Laminated Wooden/Vitrified flooring up to Rs 190/sqft </td>
+              </tr>
+              <tr>
+                <th scope="row">19 </th>
+                <td>Bed Room 1 and toilet</td>
+                <td>Laminated Wooden/Vitrified flooring up to Rs 190/sqft <br>Wardrobe - 18mm commercial ply +
+                  laminate/veneer /polycoat/lacquered glass with Hettich brand sliding hardware & fittings soft
+                  closing (size: 8’x7’ and 8’x 2’ loft) <br>Accent wall - (texture paint or wallpaper) (Size : 10’ x
+                  10’) <br>Toilet – Ceramic wall tiles up to Rs 120/sqft for floor and wall tiles. 2 vertical strips
+                  of highlighter tiles of length 2’-0”wide <br>Shower glass cubicle <br>Rs 30,000/- allowance for
+                  bathroom fixtures
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
       </div>
@@ -1102,7 +1128,8 @@
           </div>
 
           <!-- <div class="form-check form-check-inline"> <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> <label class="form-check-label" for="inlineCheckbox1">&nbsp;&nbsp;Send me offers & updates</label> </div> -->
-          <div class="form-button pt-4"> <button type="submit" class="btn btn-primary btn-block" ><span>SUBMIT</span></button> </div>
+          <div class="form-button pt-4"> <button type="submit"
+              class="btn btn-primary btn-block"><span>SUBMIT</span></button> </div>
         </form>
 
       </div>
@@ -1114,8 +1141,21 @@
 <!-- end booking modal -->
 <script src="{% static 'js/home.js' %}"></script>
 
+
+
+<!-- scollling -->
 <script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $("#mainNavbar");
+      $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+    });
+  });
+
+
+
  
+
 </script>
 
 {% endblock %}

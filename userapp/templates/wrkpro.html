@@ -1,13 +1,22 @@
 {% extends 'master.html' %}
 {% block content %}
 {% load static %}
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="js/ie-emulation-modes-warning.js"></script>
 <link rel="stylesheet" href="{% static 'css/review.css' %}">
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 <style>
+  body {
+    padding-top: 100px;
+
+  }
+
+  .navbar {
+    background-image: linear-gradient(to left, #000428, #004e92);
+
+  }
+
   .card-img {
     height: 240px;
 
@@ -16,6 +25,91 @@
   .filebtn {
     border-radius: 50%;
   }
+  .revbtn{
+    border-radius: 20px;
+    background-color: #143250;
+    color: white;
+  }
+
+  /* review */
+  
+  .recard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+    width: 450px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1)
+}
+
+.comment-box {
+    padding: 5px
+}
+
+.comment-area textarea {
+    resize: none;
+    border: 1px solid #ad9f9f
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
+}
+
+.send {
+    color: #fff;
+    background-color:green;
+    border-color: #ff0000
+}
+
+
+.rating {
+    display: flex;
+    margin-top: -10px;
+    flex-direction: row-reverse;
+    margin-left: -4px;
+    float: left
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 19px;
+    font-size: 25px;
+    color: #ff0000;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+/* end */
 </style>
 
 <div class="container">
@@ -43,8 +137,8 @@
                 <h4>John Doe</h4>
                 <p class="text-secondary mb-1">Full Stack Developer</p>
                 <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button class="btn btn-primary">Book Now</button>
-               <a href="payment"><button class="btn btn-outline-primary">Add Payment</button></a> 
+                <button class="btn btn-primary" data-toggle="modal" data-target="#bookmodal1">Book Now</button>
+                <a href="payment"><button class="btn btn-outline-primary">Add Payment</button></a>
               </div>
             </div>
           </div>
@@ -151,7 +245,7 @@
               </div>
             </div>
             <hr>
-            
+
           </div>
         </div>
 
@@ -167,7 +261,7 @@
               </div>
               
             </div> -->
-        <div class="row gutters-sm" style="margin: 0;" >
+        <div class="row gutters-sm" style="margin: 0;">
           <div class="col-md-8 mb-3">
             <div class="card h-100">
               <div class="card-body ">
@@ -242,108 +336,13 @@
 
 
   </div>
-  <div class="container">
-
+  <div class="container">      
+        
     <div class="row">
-      <div class="col-lg-12" style="margin: 0;">
-        <h2 class="text-center" style="font-weight: 800;">Rating and Review</h2>
-      </div>
-      <div class="col-sm-3">
-        <div class="rating-block">
-          <h4>Average user rating</h4>
-          <h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
-          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-            <span class="fas fa-star" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-            <span class="fas fa-star" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-            <span class="fas fa-star" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-            <span class="fas fa-star" aria-hidden="true"></span>
-          </button>
-          <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-            <span class="fas fa-star" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <h4>Rating breakdown</h4>
-        <div class="pull-left">
-          <div class="pull-left" style="width:35px; line-height:1;">
-            <div style="height:9px; margin:5px 0;">5 <span class="fas fa-star"></span></div>
-          </div>
-          <div class="pull-left" style="width:180px;">
-            <div class="progress" style="height:9px; margin:8px 0;">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0"
-                aria-valuemax="5" style="width: 1000%">
-                <span class="sr-only">80% Complete (danger)</span>
-              </div>
-            </div>
-          </div>
-          <div class="pull-right" style="margin-left:10px;">1</div>
-        </div>
-        <div class="pull-left">
-          <div class="pull-left" style="width:35px; line-height:1;">
-            <div style="height:9px; margin:5px 0;">4 <span class="fas fa-star"></span></div>
-          </div>
-          <div class="pull-left" style="width:180px;">
-            <div class="progress" style="height:9px; margin:8px 0;">
-              <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0"
-                aria-valuemax="5" style="width: 80%">
-                <span class="sr-only">80% Complete (danger)</span>
-              </div>
-            </div>
-          </div>
-          <div class="pull-right" style="margin-left:10px;">1</div>
-        </div>
-        <div class="pull-left">
-          <div class="pull-left" style="width:35px; line-height:1;">
-            <div style="height:9px; margin:5px 0;">3 <span class="fas fa-star"></span></div>
-          </div>
-          <div class="pull-left" style="width:180px;">
-            <div class="progress" style="height:9px; margin:8px 0;">
-              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0"
-                aria-valuemax="5" style="width: 60%">
-                <span class="sr-only">80% Complete (danger)</span>
-              </div>
-            </div>
-          </div>
-          <div class="pull-right" style="margin-left:10px;">0</div>
-        </div>
-        <div class="pull-left">
-          <div class="pull-left" style="width:35px; line-height:1;">
-            <div style="height:9px; margin:5px 0;">2 <span class="fas fa-star"></span></div>
-          </div>
-          <div class="pull-left" style="width:180px;">
-            <div class="progress" style="height:9px; margin:8px 0;">
-              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0"
-                aria-valuemax="5" style="width: 40%">
-                <span class="sr-only">80% Complete (danger)</span>
-              </div>
-            </div>
-          </div>
-          <div class="pull-right" style="margin-left:10px;">0</div>
-        </div>
-        <div class="pull-left">
-          <div class="pull-left" style="width:35px; line-height:1;">
-            <div style="height:9px; margin:5px 0;">1 <span class="fas fa-star"></span></div>
-          </div>
-          <div class="pull-left" style="width:180px;">
-            <div class="progress" style="height:9px; margin:8px 0;">
-              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0"
-                aria-valuemax="5" style="width: 20%">
-                <span class="sr-only">80% Complete (danger)</span>
-              </div>
-            </div>
-          </div>
-          <div class="pull-right" style="margin-left:10px;">0</div>
-        </div>
+      <div class="col-lg-12">
+        <input type="button" value="Write Review" class="revbtn" data-toggle="modal" data-target="#reviewmodal">
       </div>
     </div>
-
     <div class="row">
       <div class="col-sm-7">
         <hr />
@@ -374,7 +373,6 @@
                   <span class="fas fa-star" aria-hidden="true"></span>
                 </button>
               </div>
-              <div class="review-block-title">this was nice in buy</div>
               <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
                 this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
               </div>
@@ -407,7 +405,6 @@
                   <span class="fas fa-star" aria-hidden="true"></span>
                 </button>
               </div>
-              <div class="review-block-title">this was nice in buy</div>
               <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
                 this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
               </div>
@@ -440,7 +437,6 @@
                   <span class="fas fa-star" aria-hidden="true"></span>
                 </button>
               </div>
-              <div class="review-block-title">this was nice in buy</div>
               <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
                 this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
               </div>
@@ -473,7 +469,6 @@
                   <span class="fas fa-star" aria-hidden="true"></span>
                 </button>
               </div>
-              <div class="review-block-title">this was nice in buy</div>
               <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy.
                 this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy
               </div>
@@ -486,6 +481,146 @@
 
   </div>
 </div>
+
+<!-- review modal -->
+
+<div class="modal fade" id="reviewmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- con -->
+      <div class="card recard">
+        <div class="row">
+            <div class="col-2"> <img src="{% static 'img/p1.png' %}" width="70" class="rounded-circle mt-2"> </div>
+            <div class="col-10">
+                <div class="comment-box ml-2">
+                    <h4>Add a comment</h4>
+                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                    <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" rows="4"></textarea> </div>
+                    <div class="comment-btns mt-2">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="pull-left"><a  class="btn btn-danger btn-sm" href="wrkpro">Cancel</a>  </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="pull-right"> <button type="submit" class="btn btn-success send btn-sm">Send <i class="fas fa-arrow-right"></i></button> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- end con -->
+    </div>
+  </div>
+</div>
+
+
+<!-- end review modal -->
+<!-- booking modal -->
+<div class="modal fade" id="bookmodal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+
+      <div class="card d-flex justify-content-center mx-auto  p-5">
+        <h5 class="text-muted"> Book now I will contact you </h5>
+        <form  id="booking">
+          <div class="form-row">
+            <div class="form-group col-md-6 "> <label for="">NAME <span>*</span></label> <input type="text"
+                class="form-control" id="" name="name1">
+            </div>
+            <div class="form-group col-md-6 "> <label for="">Phone <span>*</span></label> <input type="text"
+                class="form-control" id="" name="location1">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6"> <label for="">Ciy <span>*</span></label> <input type="text"
+                class="form-control" id="" name="city1">
+            </div>
+            <div class="form-group col-md-6"> <label for="">Pincode <span>*</span></label> <input type="tel"
+                class="form-control" id="" name="pincode1">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Date</label>
+              <input type="date" class="form-control" id="">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="">Time</label>
+              <input type="time" class="form-control" id="">
+            </div>
+
+
+          </div>
+
+
+          <div class="form-button pt-4"> <button type="submit"
+              class="btn btn-primary btn-block"><span>SUBMIT</span></button> </div>
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<script>
+  $('#booking').validate({
+    rules: {
+      name1: {
+        required: true,
+        minlength: 6,
+      },
+      location1: {
+        required: true,
+        minlength: 6,
+      },
+      city1: {
+        required: true,
+        minlength: 6,
+
+      },
+      pincode1: {
+        required: true,
+        number: true,
+        maxlength: 6,
+        minlength: 6,
+      },
+
+    },
+    messages: {
+      name1: {
+        required: "Enter your first  name",
+        minlength: "alteast 6",
+      },
+      location1: {
+        required: "Enter your location",
+        minlength: "alteast 6",
+      },
+      city1: {
+        required: "enter your city",
+        minlength: "alteast 6",
+
+      },
+      pincode1: {
+        required: 'enter phone number',
+        number: 'valid pin code number',
+        maxlength: 'no more than 6  ',
+        minlength: 'no less than 6',
+      },
+
+    },
+    submitHandler: function (form) {
+      
+      form.submit();
+    }
+
+  })
+</script>
+<!-- end booking modal -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="js/bootstrap.min.js"></script>

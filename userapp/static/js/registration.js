@@ -1,3 +1,8 @@
+//for date picker
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+
 // border color
 $('#firstname').keyup(function () {
   first = $('#firstname').val()
@@ -276,7 +281,7 @@ $('#form1').validate({
     dob: {
       required: "Enter Your Dob",
       date: "Select date",
-      dateFormat: "Correct Format",
+      dateFormat: "(dd/mm/yyyy)",
     },
     age: {
       required: "Enter your age",
