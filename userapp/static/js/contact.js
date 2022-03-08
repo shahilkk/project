@@ -4,10 +4,10 @@ $('#contact').validate({
             required: true,
             minlength: 6,
         },
-        lastname: {
-            required: true,
-            minlength: 6,
-        },
+        // lastname: {
+        //     required: true,
+        //     minlength: 6,
+        // },
         email: {
             required: true,
             email: true,
@@ -29,10 +29,10 @@ $('#contact').validate({
             required: "Enter your first  name",
             minlength: "alteast 6",
         },
-        lastname: {
-            required: "Enter your last name",
-            minlength: "alteast 6",
-        },
+        // lastname: {
+        //     required: "Enter your last name",
+        //     minlength: "alteast 6",
+        // },
         email: {
             required: "enter email id",
             email: "enter a valid email id",

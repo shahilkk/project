@@ -213,6 +213,18 @@ $('#form1').validate({
       required: true,
       minlength: 4,
     },
+    username: {
+      required: true,
+      minlength: 6,
+    },
+    password: {
+      required: true,
+      minlength: 6,
+    },
+    c_password:{
+      required: true,
+      equalTo: "#password1",
+    },
     email: {
       required: true,
       email: true,
@@ -267,8 +279,20 @@ $('#form1').validate({
       required: "Enter your last name",
       minlength: "alteast 4",
     },
+    username: {
+      required: "Enter your Username",
+      minlength: "alteast 6",
+    },
+    password: {
+      required: "Enter your Password",
+      minlength: "alteast 6",
+    },
+    c_password: {
+      required: "please fill this field",
+      equalTo: "password must be same"
+    },
     email: {
-      required: "Enter your Email Addreaa",
+      required: "Enter your Email Address",
       email: "Enter Valid Email Address",
     },
     phone: {

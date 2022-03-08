@@ -9,10 +9,6 @@ urlpatterns=[
     path('viewuser', views.fnviewuser, name='viewuser'),
     path('prowork', views.fnprowork, name='prowork'),
     path('prouser', views.fnprouser, name='prouser'),
-
-
-
-
-
+    path('contact', views.fncontact, name='contact'),
 
 ]    

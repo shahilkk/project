@@ -16,4 +16,12 @@ def fnreview(request):
 def fnquick(request):
     return render(request,'quick.html')  
 def fnedit(request):
-    return render(request,'edit.html')             
+    return render(request,'edit.html')   
+def fnworkdone(request):
+    return render(request,'workdone.html')
+def fnrejwork(request):
+    return render(request,'rejectwork.html')   
+def fnquickdone(request):
+    return render(request,'quickdone.html') 
+def fnquickreject(request):
+    return render(request,'quickreject.html')                        

@@ -15,6 +15,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  <!-- js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- en js -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -28,6 +32,9 @@
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
   <!-- end validation -->
+  <!-- modalshow -->
+
+  <!-- end modal shoe -->
   <link rel="stylesheet" href="{% static 'css/master.css' %}">
   <title>website</title>
   <style>
@@ -35,7 +42,7 @@
       font-family: 'Ubuntu', sans-serif;
       /* padding-top: 100px; */
     }
-   
+
     .btn-grad2 {
       /* margin: 10px;
        padding: 15px 45px; */
@@ -192,35 +199,39 @@
 
 
     }
-     .navbar.scrolled {
+
+    .navbar.scrolled {
       background-image: linear-gradient(to left, #000428, #004e92);
       transition: background 500ms
     }
-    .fot{
+
+    .fot {
       background-image: linear-gradient(to left, #000428, #004e92);
 
     }
-     /* button top */
-  #myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color:white;
-  color: black;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-}
 
-#myBtn:hover {
-  background-color: #555;
-}
-  /* end button top */
+    /* button top */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    /* end button top */
   </style>
 
 </head>
@@ -235,13 +246,14 @@
 
 
             <!-- Just an image -->
-            <a class="navbar-brand  fab fa-wolf-pack-battalion t1" style="font-size: 40px;font-weight: 400; color: white;" href="#" >
+            <a class="navbar-brand  fab fa-wolf-pack-battalion t1"
+              style="font-size: 40px;font-weight: 400; color: white;" href="#">
               EC
               job</a>
             <!-- just image end -->
             <input class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;"
               data-toggle="modal" data-target="#signmodal" type="button" value="Login">
-             <!-- <a href="" class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;">Worker Registratin</a> -->
+            <!-- <a href="" class="btn  align-middle ml-auto mr-3 order-lg-last btn-grad2" style="background-color: white;">Worker Registratin</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -272,6 +284,8 @@
     </div>
 </div>
 <!-- modAL -->
+<form action="" id="for">
+
 <div class="modal fade" id="signmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -288,7 +302,9 @@
             <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
               <h4 class="text-center mt-4 mb-4" style="text-transform: uppercase;">Login</h4>
               <form id="loginform">
+                
                 <div class="form-row">
+                  
                   <div class="form-group col-md-12"> <label for="inputName">Your Username</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your username">
                   </div>
@@ -309,6 +325,7 @@
               </form>
               <div class="social-area">
                 <h3 class="title">Or</h3>
+                <h4><a href="registration">Register As worker</a></h4>
                 <p class="text">Sign In with social media</p>
                 <ul class="social-links">
                   <li> <a href="#"> <i class="fab fa-facebook-f"></i> </a> </li>
@@ -370,6 +387,7 @@
     </div>
   </div>
 </div>
+</form>
 <!-- end modal -->
 <!-- nav-end -->
 <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-arrow-up"></i></button>
@@ -487,7 +505,7 @@
         <section class="mb-4 ico">
           <!-- Facebook -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-              class="fab fa-facebook-f " ></i></a>
+              class="fab fa-facebook-f "></i></a>
 
           <!-- Twitter -->
           <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
@@ -524,10 +542,18 @@
 
 
 <script>
+  // modal show
+  // $(window).load(function(){
+  //   setTimeout(function(){
+  //     $('#signmodal').modal('show')
+  //   },500);
+  // });
  
-	
-	
- $('#reg').validate({
+
+
+
+
+  $('#reg').validate({
     rules: {
       regname: {
         required: true,
@@ -596,22 +622,22 @@
   //Get the button
   var mybutton = document.getElementById("myBtn");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 </script>
 
 

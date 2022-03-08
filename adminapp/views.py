@@ -14,4 +14,6 @@ def fnviewuser(request):
 def fnprowork(request):
     return render(request,'prowork.html')    
 def fnprouser(request):
-    return render(request,'prouser.html')                 
+    return render(request,'prouser.html')      
+def fncontact(request):
+    return render(request,'contactdetails.html')                

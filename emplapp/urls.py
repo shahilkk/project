@@ -10,6 +10,10 @@ urlpatterns=[
     path('review', views.fnreview, name='review'),
     path('quick', views.fnquick, name='quick'),
     path('edit', views.fnedit, name='edit'),
+    path('workdone', views.fnworkdone, name='workdone'),
+    path('rejwork', views.fnrejwork, name='rejwork'),
+    path('quickdone', views.fnquickdone, name='quickdone'),
+    path('quickreject', views.fnquickreject, name='quickreject'),
 
 
 ]
